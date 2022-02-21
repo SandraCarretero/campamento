@@ -5,4 +5,108 @@
 
 body {
   margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+.main-padding {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  background-color: #590209;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+nav .logo {
+  width: 60px;
+  aspect-ratio: 1/1;
+  background-color: white;
+  margin-left: 20px;
+}
+nav .menu ul {
+  margin: 0;
+}
+nav .menu ul li {
+  text-align: center;
+  color: white;
+  list-style: none;
+  display: inline;
+  cursor: pointer;
+}
+nav .menu ul a {
+  margin: 20px;
+  text-decoration: none;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 100%;
+  height: 80vh;
+  padding-bottom: 30px;
+  background-position: center;
+  background-size: cover;
+}
+header.header_campamento {
+  background-color: #9BA8F2;
+}
+header h1 {
+  color: white;
+  font-weight: 700;
+}
+
+section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+section .text {
+  padding-right: 20px;
+}
+section .carrusel {
+  padding: 20px;
+}
+section .carrusel .carousel-indicators [data-bs-target] {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-right: 8px;
+  margin-left: 8px;
+}
+section .carrusel .carousel-inner {
+  background-color: #F2A413;
+}
+section .carrusel .carousel-inner img {
+  opacity: 0;
+}
+
+.clases .img {
+  width: 50%;
+  background-color: #F2A413;
 }
