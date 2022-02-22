@@ -1,0 +1,5 @@
+# para ignoras ciertos archivos, para que no haga el seguimiento
+
+.DS_store
+
+

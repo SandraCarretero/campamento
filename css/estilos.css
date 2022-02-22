@@ -5,7 +5,19 @@
 
 body {
   margin: 0;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Quicksand", sans-serif;
+}
+
+.actividades_talleres .card .back, .actividades_talleres .card .front, .clases .clase_teorica, .clases .clase_practica {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .main-padding {
@@ -15,8 +27,9 @@ body {
 
 nav {
   position: fixed;
+  z-index: 100;
   width: 100%;
-  background-color: #590209;
+  background-color: #F2A413;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -50,7 +63,14 @@ nav .menu ul a {
   text-decoration: none;
 }
 
-header {
+footer {
+  width: 100%;
+  height: 150px;
+  background-color: #333333;
+}
+
+.header_campamento {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -66,11 +86,11 @@ header {
   padding-bottom: 30px;
   background-position: center;
   background-size: cover;
+  background-color: #F2A413;
 }
-header.header_campamento {
-  background-color: #9BA8F2;
-}
-header h1 {
+.header_campamento h1 {
+  position: absolute;
+  bottom: 30px;
   color: white;
   font-weight: 700;
 }
@@ -91,6 +111,7 @@ section .text {
 }
 section .carrusel {
   padding: 20px;
+  width: 100%;
 }
 section .carrusel .carousel-indicators [data-bs-target] {
   width: 15px;
@@ -100,13 +121,141 @@ section .carrusel .carousel-indicators [data-bs-target] {
   margin-left: 8px;
 }
 section .carrusel .carousel-inner {
-  background-color: #F2A413;
+  background-color: #590209a6;
 }
 section .carrusel .carousel-inner img {
   opacity: 0;
 }
 
-.clases .img {
-  width: 50%;
+.line {
+  margin: 40px auto;
+  font-size: 30px;
+  text-align: center;
+}
+
+.clases {
+  padding: 0 130px;
+}
+.clases .clase_practica {
+  margin-bottom: 40px;
+}
+.clases .clase_practica .img {
+  width: 100%;
+  margin-right: 30px;
+  aspect-ratio: 3/2;
+  background-color: #590209a6;
+}
+.clases .clase_practica .description {
+  width: 80%;
+}
+.clases .clase_teorica {
+  margin-bottom: 40px;
+}
+.clases .clase_teorica .img {
+  width: 100%;
+  margin-left: 30px;
+  aspect-ratio: 3/2;
+  background-color: #590209a6;
+}
+.clases .clase_teorica .description {
+  width: 80%;
+}
+
+.header_talleres {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  width: 100%;
+  height: 80vh;
+  padding-bottom: 30px;
+  background-position: center;
+  background-size: cover;
+  background-color: black;
+}
+.header_talleres .img:first-child {
+  width: 33.3%;
+  background-color: black;
+}
+.header_talleres .img:nth-child(2) {
+  width: 33.3%;
+  background-color: #1d1d1d;
+}
+.header_talleres .img:nth-child(3) {
+  width: 33.3%;
+  background-color: black;
+}
+.header_talleres h1 {
+  position: absolute;
+  bottom: 30px;
+  color: white;
+  font-weight: 700;
+}
+
+.actividades_talleres {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.actividades_talleres .card {
+  border: none;
+  position: relative;
+  width: 30%;
+  height: 600px;
+  cursor: pointer;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+.actividades_talleres .card .front {
+  position: absolute;
+  color: white;
+  background-color: #590209;
+  width: 100%;
+  height: 100%;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+.actividades_talleres .card .back {
+  position: absolute;
+  color: white;
   background-color: #F2A413;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+.actividades_talleres .card:hover .front {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.actividades_talleres .card:hover .back {
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
 }
