@@ -65,7 +65,7 @@ nav .menu ul a {
 
 footer {
   width: 100%;
-  height: 150px;
+  height: 100px;
   background-color: #333333;
 }
 
@@ -170,15 +170,15 @@ section .carrusel .carousel-inner img {
       -ms-flex-align: stretch;
           align-items: stretch;
   width: 100%;
-  height: 80vh;
-  padding-bottom: 30px;
+  height: 900px;
+  padding-bottom: 115px;
   background-position: center;
   background-size: cover;
   background-color: black;
 }
 .header_talleres .img:first-child {
   width: 33.3%;
-  background-color: black;
+  background-color: #242424;
 }
 .header_talleres .img:nth-child(2) {
   width: 33.3%;
@@ -186,7 +186,7 @@ section .carrusel .carousel-inner img {
 }
 .header_talleres .img:nth-child(3) {
   width: 33.3%;
-  background-color: black;
+  background-color: #242424;
 }
 .header_talleres h1 {
   position: absolute;
@@ -201,14 +201,14 @@ section .carrusel .carousel-inner img {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 80px;
+  margin-bottom: 80px;
 }
 .actividades_talleres .card {
   border: none;
   position: relative;
   width: 30%;
-  height: 600px;
+  aspect-ratio: 2/3;
   cursor: pointer;
   -webkit-transition-property: all;
   transition-property: all;
@@ -222,7 +222,7 @@ section .carrusel .carousel-inner img {
 .actividades_talleres .card .front {
   position: absolute;
   color: white;
-  background-color: #590209;
+  background-color: #590209a6;
   width: 100%;
   height: 100%;
   -webkit-transition-property: all;
@@ -235,7 +235,7 @@ section .carrusel .carousel-inner img {
 .actividades_talleres .card .back {
   position: absolute;
   color: white;
-  background-color: #F2A413;
+  background-color: #f2a413b7;
   width: 100%;
   height: 100%;
   -webkit-transform: rotateY(-180deg);
@@ -258,4 +258,33 @@ section .carrusel .carousel-inner img {
 .actividades_talleres .card:hover .back {
   -webkit-transform: rotateY(0deg);
           transform: rotateY(0deg);
+}
+
+.nosotros {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 700px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.nosotros .persona {
+  width: 30%;
+  aspect-ratio: 1/1;
+  text-align: center;
+}
+.nosotros .persona .foto {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background-color: #590209a6;
+}
+.nosotros .persona .nombre {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.nosotros .persona.especial {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
