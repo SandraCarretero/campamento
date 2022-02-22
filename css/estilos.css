@@ -288,3 +288,113 @@ section .carrusel .carousel-inner img {
   -ms-flex-item-align: end;
       align-self: flex-end;
 }
+
+form {
+  overflow: hidden;
+  margin: 30px auto;
+  width: 60%;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  border-radius: 14px;
+  padding: 30px;
+  position: relative;
+}
+form label {
+  width: 100%;
+  display: inline-block;
+  margin-bottom: 15px;
+  color: #727272;
+  font-size: 13px;
+}
+form input, form textarea {
+  width: 100%;
+  border: 0;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+form input:focus, form textarea:focus {
+  outline: 0;
+}
+form .recta {
+  margin: 20px 0;
+  width: 100%;
+  height: 2px;
+  background-color: #dadada;
+}
+form .recta:after {
+  content: "";
+  display: inherit;
+  width: 0%;
+  height: 2px;
+  background-image: -webkit-gradient(linear, right top, left bottom, from(#590209), to(#F2A413));
+  background-image: linear-gradient(to bottom left, #590209, #F2A413);
+  -webkit-transition: all;
+  transition: all;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+}
+form input:focus + .recta::after {
+  width: 100%;
+}
+form textarea:focus + .recta::after {
+  width: 100%;
+}
+form button {
+  margin-top: 20px;
+  border: 0;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-image: -webkit-gradient(linear, right top, left top, from(#F2A413), to(#590209));
+  background-image: linear-gradient(to left, #F2A413, #590209);
+  background-size: 200%;
+  background-position: right;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  border-radius: 25px;
+  font-size: 18px;
+  cursor: pointer;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+}
+form button:hover {
+  background-position: left;
+}
+form button i {
+  margin: 0 10px;
+}
+
+@-webkit-keyframes fondo {
+  0% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
+}
+
+@keyframes fondo {
+  0% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
+}
