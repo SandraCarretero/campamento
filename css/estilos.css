@@ -73,8 +73,8 @@ nav .menu ul a:hover {
 nav.change {
   -webkit-animation: change;
           animation: change;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
   -webkit-animation-timing-function: ease-in-out;
           animation-timing-function: ease-in-out;
   -webkit-animation-fill-mode: both;
@@ -185,6 +185,7 @@ section .carrusel .carousel-indicators [data-bs-target] {
 }
 section .carrusel .carousel-inner {
   background-color: #590209a6;
+  border-radius: 14px;
 }
 section .carrusel .carousel-inner img {
   opacity: 0;
@@ -201,7 +202,8 @@ section .carrusel .carousel-inner img {
 }
 .clases .clase_practica {
   position: relative;
-  left: -150%;
+  -webkit-transform: translateX(-100vw);
+          transform: translateX(-100vw);
   margin-bottom: 40px;
 }
 .clases .clase_practica .img {
@@ -213,11 +215,11 @@ section .carrusel .carousel-inner img {
 .clases .clase_practica .description {
   width: 80%;
 }
-.clases .clase_practica.aparece_izq {
-  -webkit-animation: aparece_izq;
-          animation: aparece_izq;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
+.clases .clase_practica.aparece-izq {
+  -webkit-animation: aparece-izq;
+          animation: aparece-izq;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
   -webkit-animation-timing-function: ease-in-out;
@@ -225,7 +227,8 @@ section .carrusel .carousel-inner img {
 }
 .clases .clase_teorica {
   position: relative;
-  right: -150%;
+  -webkit-transform: translateX(-100vw);
+          transform: translateX(-100vw);
   margin-bottom: 40px;
 }
 .clases .clase_teorica .img {
@@ -237,48 +240,56 @@ section .carrusel .carousel-inner img {
 .clases .clase_teorica .description {
   width: 80%;
 }
-.clases .clase_teorica.aparece_dcha {
-  -webkit-animation: aparece_dcha;
-          animation: aparece_dcha;
-  -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
+.clases .clase_teorica.aparece-dcha {
+  -webkit-animation: aparece-dcha;
+          animation: aparece-dcha;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
   -webkit-animation-timing-function: ease-in-out;
           animation-timing-function: ease-in-out;
 }
 
-@-webkit-keyframes aparece_izq {
+@-webkit-keyframes aparece-izq {
   0% {
-    left: -150%;
+    -webkit-transform: translateX(-100vw);
+            transform: translateX(-100vw);
   }
   100% {
-    left: 0px;
+    -webkit-transform: translateX(0vw);
+            transform: translateX(0vw);
   }
 }
 
-@keyframes aparece_izq {
+@keyframes aparece-izq {
   0% {
-    left: -150%;
+    -webkit-transform: translateX(-100vw);
+            transform: translateX(-100vw);
   }
   100% {
-    left: 0px;
+    -webkit-transform: translateX(0vw);
+            transform: translateX(0vw);
   }
 }
-@-webkit-keyframes aparece_dcha {
+@-webkit-keyframes aparece-dcha {
   0% {
-    right: -150%;
+    -webkit-transform: translateX(100vw);
+            transform: translateX(100vw);
   }
   100% {
-    right: 0px;
+    -webkit-transform: translateX(0vw);
+            transform: translateX(0vw);
   }
 }
-@keyframes aparece_dcha {
+@keyframes aparece-dcha {
   0% {
-    right: -150%;
+    -webkit-transform: translateX(100vw);
+            transform: translateX(100vw);
   }
   100% {
-    right: 0px;
+    -webkit-transform: translateX(0vw);
+            transform: translateX(0vw);
   }
 }
 .header_talleres {
@@ -290,8 +301,9 @@ section .carrusel .carousel-inner img {
       -ms-flex-align: stretch;
           align-items: stretch;
   width: 100%;
-  height: 900px;
+  height: 100vh;
   padding-bottom: 115px;
+  padding-top: 100px;
   background-position: center;
   background-size: cover;
   background-color: black;
@@ -422,6 +434,7 @@ section .carrusel .carousel-inner img {
 .pop .carnet .cara-redes .cara {
   width: 100%;
   aspect-ratio: 1/1;
+  border-radius: 14px;
   background-color: #590209a6;
 }
 .pop .carnet .cara-redes .redes {
@@ -463,6 +476,7 @@ section .carrusel .carousel-inner img {
 .nosotros .persona .foto {
   width: 100%;
   aspect-ratio: 1/1;
+  border-radius: 14px;
   background-color: #590209a6;
 }
 .nosotros .persona .nombre {
@@ -485,7 +499,7 @@ section .carrusel .carousel-inner img {
 .formulario form {
   overflow: hidden;
   margin: 30px auto;
-  width: 50%;
+  width: 46%;
   background-color: white;
   border: 1px solid #ddd;
   border-radius: 14px;
@@ -576,6 +590,7 @@ section .carrusel .carousel-inner img {
   margin: 0 10px;
 }
 .formulario .mapa {
+  width: 46%;
   padding: 20px;
   background-color: #590209a6;
 }
