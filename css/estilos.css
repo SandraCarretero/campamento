@@ -8,7 +8,7 @@ body {
   font-family: "Quicksand", sans-serif;
 }
 
-.actividades_talleres .card .back, .actividades_talleres .card .front, .clases .clase_teorica, .clases .clase_practica {
+.pop, .actividades_talleres .card .back, .actividades_talleres .card .front, .clases .clase_teorica, .clases .clase_practica {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -29,7 +29,7 @@ nav {
   position: fixed;
   z-index: 100;
   width: 100%;
-  background-color: #F2A413;
+  background-color: transparent;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -39,8 +39,8 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 nav .logo {
   width: 60px;
@@ -62,7 +62,70 @@ nav .menu ul a {
   margin: 20px;
   text-decoration: none;
 }
+nav .menu ul a:hover {
+  -webkit-animation: blur;
+          animation: blur;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+nav.change {
+  -webkit-animation: change;
+          animation: change;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
 
+@-webkit-keyframes change {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #000000e3;
+  }
+}
+
+@keyframes change {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #000000e3;
+  }
+}
+@-webkit-keyframes blur {
+  0% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+  }
+  50% {
+    -webkit-filter: blur(2px);
+            filter: blur(2px);
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+  }
+}
+@keyframes blur {
+  0% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+  }
+  50% {
+    -webkit-filter: blur(2px);
+            filter: blur(2px);
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+  }
+}
 footer {
   width: 100%;
   height: 100px;
@@ -137,6 +200,8 @@ section .carrusel .carousel-inner img {
   padding: 0 130px;
 }
 .clases .clase_practica {
+  position: relative;
+  left: -150%;
   margin-bottom: 40px;
 }
 .clases .clase_practica .img {
@@ -148,7 +213,19 @@ section .carrusel .carousel-inner img {
 .clases .clase_practica .description {
   width: 80%;
 }
+.clases .clase_practica.aparece_izq {
+  -webkit-animation: aparece_izq;
+          animation: aparece_izq;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
 .clases .clase_teorica {
+  position: relative;
+  right: -150%;
   margin-bottom: 40px;
 }
 .clases .clase_teorica .img {
@@ -160,7 +237,50 @@ section .carrusel .carousel-inner img {
 .clases .clase_teorica .description {
   width: 80%;
 }
+.clases .clase_teorica.aparece_dcha {
+  -webkit-animation: aparece_dcha;
+          animation: aparece_dcha;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
 
+@-webkit-keyframes aparece_izq {
+  0% {
+    left: -150%;
+  }
+  100% {
+    left: 0px;
+  }
+}
+
+@keyframes aparece_izq {
+  0% {
+    left: -150%;
+  }
+  100% {
+    left: 0px;
+  }
+}
+@-webkit-keyframes aparece_dcha {
+  0% {
+    right: -150%;
+  }
+  100% {
+    right: 0px;
+  }
+}
+@keyframes aparece_dcha {
+  0% {
+    right: -150%;
+  }
+  100% {
+    right: 0px;
+  }
+}
 .header_talleres {
   position: relative;
   display: -webkit-box;
@@ -260,6 +380,70 @@ section .carrusel .carousel-inner img {
           transform: rotateY(0deg);
 }
 
+.pop {
+  position: fixed;
+  z-index: -1;
+  opacity: 0;
+  width: 100%;
+  height: 100vh;
+}
+.pop .fondo {
+  width: 100%;
+  height: 100vh;
+  background-color: #000000b0;
+}
+.pop .carnet {
+  position: absolute;
+  width: 60%;
+  aspect-ratio: 3/2;
+  padding: 60px;
+  background-color: #e6e6e6;
+  border-radius: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.pop .carnet .cara-redes {
+  width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.pop .carnet .cara-redes .cara {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background-color: #590209a6;
+}
+.pop .carnet .cara-redes .redes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.pop .carnet .cara-redes .redes img {
+  width: 12%;
+  margin: 15px 25px 15px 0;
+}
+.pop .carnet .caracteristicas {
+  width: 60%;
+}
+.pop.open {
+  z-index: 100;
+  opacity: 1;
+}
+
 .nosotros {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -274,6 +458,7 @@ section .carrusel .carousel-inner img {
   width: 30%;
   aspect-ratio: 1/1;
   text-align: center;
+  cursor: pointer;
 }
 .nosotros .persona .foto {
   width: 100%;
@@ -289,11 +474,21 @@ section .carrusel .carousel-inner img {
       align-self: flex-end;
 }
 
-form {
+.formulario {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.formulario form {
   overflow: hidden;
   margin: 30px auto;
-  width: 60%;
+  width: 50%;
   background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 14px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -308,29 +503,29 @@ form {
   padding: 30px;
   position: relative;
 }
-form label {
+.formulario form label {
   width: 100%;
   display: inline-block;
   margin-bottom: 15px;
   color: #727272;
   font-size: 13px;
 }
-form input, form textarea {
+.formulario form input, .formulario form textarea {
   width: 100%;
   border: 0;
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
 }
-form input:focus, form textarea:focus {
+.formulario form input:focus, .formulario form textarea:focus {
   outline: 0;
 }
-form .recta {
+.formulario form .recta {
   margin: 20px 0;
   width: 100%;
   height: 2px;
   background-color: #dadada;
 }
-form .recta:after {
+.formulario form .recta:after {
   content: "";
   display: inherit;
   width: 0%;
@@ -342,13 +537,13 @@ form .recta:after {
   -webkit-transition-duration: 1s;
           transition-duration: 1s;
 }
-form input:focus + .recta::after {
+.formulario form input:focus + .recta::after {
   width: 100%;
 }
-form textarea:focus + .recta::after {
+.formulario form textarea:focus + .recta::after {
   width: 100%;
 }
-form button {
+.formulario form button {
   margin-top: 20px;
   border: 0;
   color: white;
@@ -374,27 +569,13 @@ form button {
   -webkit-transition-duration: 1s;
           transition-duration: 1s;
 }
-form button:hover {
+.formulario form button:hover {
   background-position: left;
 }
-form button i {
+.formulario form button i {
   margin: 0 10px;
 }
-
-@-webkit-keyframes fondo {
-  0% {
-    background-position: right;
-  }
-  100% {
-    background-position: left;
-  }
-}
-
-@keyframes fondo {
-  0% {
-    background-position: right;
-  }
-  100% {
-    background-position: left;
-  }
+.formulario .mapa {
+  padding: 20px;
+  background-color: #590209a6;
 }

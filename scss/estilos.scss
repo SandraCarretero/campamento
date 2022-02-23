@@ -29,12 +29,12 @@ nav{
     position: fixed;
     z-index: 100;
     width: 100%;
-    background-color: $accent-color;
+    background-color: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     .logo{
         width: 60px;
         aspect-ratio: 1/1;
@@ -54,10 +54,42 @@ nav{
             a{
                 margin: 20px;
                 text-decoration: none;
+                &:hover{
+                    animation: blur;
+                    animation-duration: 0.5s;
+                    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                }
             }
         }
     }
+    &.change{
+        animation: change;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: both;
+    }
 }
+
+@keyframes change{
+    0%{
+        background-color: transparent;
+    }
+    100%{
+        background-color: #000000e3;
+    }
+}
+@keyframes blur{
+    0%{
+        filter: blur(0px);
+    }
+    50%{
+        filter: blur(2px);
+    }
+    100%{
+        filter: blur(0px);
+    }
+}
+
 
 
 // footer
@@ -129,6 +161,8 @@ section{
 .clases{
     padding: 0 130px;
     .clase_practica{
+        position: relative;
+        left: -150%;
         margin-bottom: 40px;
         @extend %flex-center-center;
         .img{
@@ -140,8 +174,16 @@ section{
         .description{
             width: 80%
         }
+        &.aparece_izq{
+            animation: aparece_izq;
+            animation-duration: 2s;
+            animation-fill-mode: both;
+            animation-timing-function: ease-in-out;
+        }
     }
     .clase_teorica{
+        position: relative;
+        right: -150%;
         @extend %flex-center-center;
         margin-bottom: 40px;
         .img{
@@ -153,6 +195,29 @@ section{
         .description{
             width: 80%
         }
+        &.aparece_dcha{
+            animation: aparece_dcha;
+            animation-duration: 1.5s;
+            animation-fill-mode: both;
+            animation-timing-function: ease-in-out;
+        }
+    }
+}
+
+@keyframes aparece_izq{
+    0%{
+        left: -150%;
+    }
+    100%{
+        left: 0px;
+    }
+}
+@keyframes aparece_dcha{
+    0%{
+        right: -150%;
+    }
+    100%{
+        right: 0px;
     }
 }
 
@@ -251,6 +316,56 @@ section{
 // sobre nosotros
 
 // personas
+.pop{
+    position: fixed;
+    z-index: -1;
+    opacity: 0;
+    width: 100%;
+    height: 100vh;
+    @extend %flex-center-center;
+    .fondo{
+        width: 100%;
+        height: 100vh;
+        background-color: #000000b0;
+    }
+    .carnet{
+        position: absolute;
+        width: 60%;
+        aspect-ratio: 3/2;
+        padding: 60px;
+        background-color: #e6e6e6;
+        border-radius: 14px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .cara-redes{
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            .cara{
+                width: 100%;
+                aspect-ratio: 1/1;
+                background-color: $secondary-color;
+            }
+            .redes{
+                display: flex;
+                align-items: center;
+                img{
+                    width: 12%;
+                    margin: 15px 25px 15px 0;
+                }
+            }
+        }
+        .caracteristicas{
+            width: 60%;
+        }
+    }
+    &.open{
+        z-index: 100;
+        opacity: 1;
+    }
+}
+
 .nosotros{
     display: flex;
     justify-content: space-around;
@@ -261,6 +376,7 @@ section{
         width: 30%;
         aspect-ratio: 1/1;
         text-align: center;
+        cursor: pointer;
         .foto{
             width: 100%;
             aspect-ratio: 1/1;
@@ -279,89 +395,92 @@ section{
 
 
 // contacto
-form{
-    overflow: hidden;
-    margin: 30px auto;
-    width: 60%;
-    background-color: white;
+.formulario{
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    border-radius: 14px;
-    padding: 30px;
-    position: relative;
-    label{
-        width: 100%;
-        display: inline-block;
-        margin-bottom: 15px;
-        color: #727272;
-        font-size: 13px;
-    }
-    input, textarea{
-        width: 100%;
-        border: 0;
-        font-size: 16px;
-        font-family: Arial, Helvetica, sans-serif;
-        &:focus {
-            outline: 0;
-        }
-    }
-    .recta{
-        margin: 20px 0;
-        width: 100%;
-        height: 2px;
-        background-color: #dadada;
-        &:after{
-            content: "";
-            display: inherit;
-            width: 0%;
-            height: 2px;
-            background-image: linear-gradient(to bottom left, $main-color, $accent-color);
-            transition: all;
-            transition-duration: 1s;
-        }
-    }
-    input:focus+.recta::after{
-        width: 100%;
-    }
-    textarea:focus+.recta::after{
-        width: 100%;
-    }
-    button{
-        margin-top: 20px;
-        border: 0;
-        color: white;
+    align-items: center;
+    form{
+        overflow: hidden;
+        margin: 30px auto;
+        width: 50%;
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 14px;
         display: flex;
-        background-image: linear-gradient(to left, $accent-color, $main-color);
-        background-size: 200%;
-        background-position: right;
-        justify-content: center;
-        align-items: center;
-        padding: 10px;
-        border-radius: 25px;
-        font-size: 18px;
-        cursor: pointer;
-        transition-property: all;
-        transition-duration: 1s;
-        &:hover{
-            background-position: left;
+        flex-direction: column;
+        justify-content: space-evenly;
+        border-radius: 14px;
+        padding: 30px;
+        position: relative;
+        label{
+            width: 100%;
+            display: inline-block;
+            margin-bottom: 15px;
+            color: #727272;
+            font-size: 13px;
         }
-        i{
-            margin: 0 10px;
+        input, textarea{
+            width: 100%;
+            border: 0;
+            font-size: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+            &:focus {
+                outline: 0;
+            }
         }
+        .recta{
+            margin: 20px 0;
+            width: 100%;
+            height: 2px;
+            background-color: #dadada;
+            &:after{
+                content: "";
+                display: inherit;
+                width: 0%;
+                height: 2px;
+                background-image: linear-gradient(to bottom left, $main-color, $accent-color);
+                transition: all;
+                transition-duration: 1s;
+            }
+        }
+        input:focus+.recta::after{
+            width: 100%;
+        }
+        textarea:focus+.recta::after{
+            width: 100%;
+        }
+        button{
+            margin-top: 20px;
+            border: 0;
+            color: white;
+            display: flex;
+            background-image: linear-gradient(to left, $accent-color, $main-color);
+            background-size: 200%;
+            background-position: right;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            border-radius: 25px;
+            font-size: 18px;
+            cursor: pointer;
+            transition-property: all;
+            transition-duration: 1s;
+            &:hover{
+                background-position: left;
+            }
+            i{
+                margin: 0 10px;
+            }
+        }
+    }
+    .mapa{
+        padding: 20px;
+        background-color: $secondary-color;
     }
 }
 
 
 
-@keyframes fondo{
-    0%{
-        background-position: right;
-    }
-    100%{
-        background-position: left;
-    }
-}
+
 
 
 
