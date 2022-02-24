@@ -54,7 +54,7 @@ function scrollAnimation( id, clase ) {
     console.log("altuta ventana:"+ventana);
 
     // si el scroll es mayor que la distancia del elemento, añadimos clase
-    if(scroll+ventana/2 > distancia_elemento ){
+    if(scroll+ventana > distancia_elemento ){
         $(id).addClass(clase);
     }
     // para quitarlo al subir 

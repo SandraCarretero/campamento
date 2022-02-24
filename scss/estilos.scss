@@ -76,6 +76,7 @@ nav{
     }
     100%{
         background-color: #000000e3;
+        backdrop-filter: blur(60px);
     }
 }
 @keyframes blur{
@@ -130,6 +131,7 @@ section{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-top: 50px;
     .text{
         padding-right: 20px
     }
@@ -153,23 +155,47 @@ section{
     }
 }
 
-.line{
-    margin: 40px auto;
-    font-size: 30px;
-    text-align: center;
+.contenedor-line{
+    overflow: hidden;
+    width: 100%;
+    .line{
+        white-space: nowrap;
+        margin: 40px auto;
+        font-size: 40px;
+        text-align: center;
+        padding-top: 70px;
+        padding-bottom: 70px;
+        animation: lateral;
+        animation-duration: 30s;
+        animation-timing-function: linear;
+        animation-fill-mode: both;
+        animation-iteration-count: infinite;
+    }
 }
+
+@keyframes lateral{
+    0%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+
+
 
 .clases{
     padding: 0 130px;
     .clase_practica{
         position: relative;
         transform: translateX(-100vw);
-        margin-bottom: 40px;
+        margin-bottom: 60px;
         @extend %flex-center-center;
         .img{
             width: 100%;
             margin-right: 30px;
             aspect-ratio: 3/2;
+            border-radius: 14px;
             background-color: $secondary-color;
         }
         .description{
@@ -186,11 +212,12 @@ section{
         position: relative;
         transform: translateX(-100vw);
         @extend %flex-center-center;
-        margin-bottom: 40px;
+        margin-bottom: 60px;
         .img{
             width: 100%;
             margin-left: 30px;
             aspect-ratio: 3/2;
+            border-radius: 14px;
             background-color: $secondary-color;
         }
         .description{
@@ -201,6 +228,7 @@ section{
             animation-duration: 1s;
             animation-fill-mode: both;
             animation-timing-function: ease-in-out;
+            animation-delay: 0.5s;
         }
     }
 }
@@ -231,9 +259,6 @@ section{
 
 // cabecera
 .header_talleres{
-    position: relative;
-    display: flex;
-    align-items: stretch;
     width: 100%;
     height: 100vh;
     padding-bottom: 115px;
@@ -241,18 +266,23 @@ section{
     background-position: center;
     background-size: cover;
     background-color: black;
-    .img:first-child{
-        width: 33.3%;
-        background-color: rgb(36, 36, 36);
+    .contenedor-img{
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        .img{
+            width: 33.3%;
+            height: 80vh;
+            display: inline-block;
+            &:nth-child(2n+1){
+                background-color: rgb(36, 36, 36);
+            }
+            &:nth-child(2n){
+                background-color: rgb(29, 29, 29);
+            }
+        }
     }
-    .img:nth-child(2){
-        width: 33.3%;
-        background-color: rgb(29, 29, 29);
-    }
-    .img:nth-child(3){
-        width: 33.3%;
-        background-color: rgb(36, 36, 36);
-    }
+    
     h1{
         position: absolute;
         bottom: 30px;
@@ -317,6 +347,26 @@ section{
 
 // sobre nosotros
 
+// cabecera
+.header_nosotros{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    height: 50vh;
+    padding-bottom: 30px;
+    background-position: center;
+    background-size: cover;
+    background-color: $accent-color;
+    h1{
+        position: absolute;
+        bottom: 30px;
+        color: white;
+        font-weight: 700;
+    }
+}
+
 // personas
 .pop{
     position: fixed;
@@ -372,7 +422,9 @@ section{
 .nosotros{
     display: flex;
     justify-content: space-around;
-    height: 700px;
+    height: 60vh;
+    margin-top: 40px;
+    margin-bottom: 40px;
     padding-top: 60px;
     padding-bottom: 60px;
     .persona{
@@ -381,7 +433,8 @@ section{
         text-align: center;
         cursor: pointer;
         .foto{
-            width: 100%;
+            width: 80%;
+            margin: 0 auto;
             aspect-ratio: 1/1;
             border-radius: 14px;
             background-color: $secondary-color;
@@ -390,9 +443,35 @@ section{
             padding-top: 20px;
             padding-bottom: 20px;
         }
+        &.vertical{
+            animation: vertical;
+            animation-duration: 1s;
+            animation-timing-function: cubic-bezier(0.68, -0.18, 0.53, 1.32);
+            animation-fill-mode: both;
+        }
         &.especial{
             align-self: flex-end;
         }
+        &.uno{
+            animation-delay: 0s;
+        }
+        &.dos{
+            animation-delay: 0.2s;
+        }
+        &.tres{
+            animation-delay: 0.4s;
+        }
+    }
+}
+
+@keyframes vertical{
+    0%{
+        opacity: 0;
+        transform: translateY(20%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0%);
     }
 }
 

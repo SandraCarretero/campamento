@@ -87,6 +87,8 @@ nav.change {
   }
   100% {
     background-color: #000000e3;
+    -webkit-backdrop-filter: blur(60px);
+            backdrop-filter: blur(60px);
   }
 }
 
@@ -96,6 +98,8 @@ nav.change {
   }
   100% {
     background-color: #000000e3;
+    -webkit-backdrop-filter: blur(60px);
+            backdrop-filter: blur(60px);
   }
 }
 @-webkit-keyframes blur {
@@ -168,6 +172,7 @@ section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-top: 50px;
 }
 section .text {
   padding-right: 20px;
@@ -191,12 +196,50 @@ section .carrusel .carousel-inner img {
   opacity: 0;
 }
 
-.line {
+.contenedor-line {
+  overflow: hidden;
+  width: 100%;
+}
+.contenedor-line .line {
+  white-space: nowrap;
   margin: 40px auto;
-  font-size: 30px;
+  font-size: 40px;
   text-align: center;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  -webkit-animation: lateral;
+          animation: lateral;
+  -webkit-animation-duration: 30s;
+          animation-duration: 30s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
 }
 
+@-webkit-keyframes lateral {
+  0% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+@keyframes lateral {
+  0% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
 .clases {
   padding: 0 130px;
 }
@@ -204,12 +247,13 @@ section .carrusel .carousel-inner img {
   position: relative;
   -webkit-transform: translateX(-100vw);
           transform: translateX(-100vw);
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 .clases .clase_practica .img {
   width: 100%;
   margin-right: 30px;
   aspect-ratio: 3/2;
+  border-radius: 14px;
   background-color: #590209a6;
 }
 .clases .clase_practica .description {
@@ -229,12 +273,13 @@ section .carrusel .carousel-inner img {
   position: relative;
   -webkit-transform: translateX(-100vw);
           transform: translateX(-100vw);
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 .clases .clase_teorica .img {
   width: 100%;
   margin-left: 30px;
   aspect-ratio: 3/2;
+  border-radius: 14px;
   background-color: #590209a6;
 }
 .clases .clase_teorica .description {
@@ -249,6 +294,8 @@ section .carrusel .carousel-inner img {
           animation-fill-mode: both;
   -webkit-animation-timing-function: ease-in-out;
           animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
 }
 
 @-webkit-keyframes aparece-izq {
@@ -293,13 +340,6 @@ section .carrusel .carousel-inner img {
   }
 }
 .header_talleres {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
   width: 100%;
   height: 100vh;
   padding-bottom: 115px;
@@ -308,17 +348,21 @@ section .carrusel .carousel-inner img {
   background-size: cover;
   background-color: black;
 }
-.header_talleres .img:first-child {
+.header_talleres .contenedor-img {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.header_talleres .contenedor-img .img {
   width: 33.3%;
+  height: 80vh;
+  display: inline-block;
+}
+.header_talleres .contenedor-img .img:nth-child(2n+1) {
   background-color: #242424;
 }
-.header_talleres .img:nth-child(2) {
-  width: 33.3%;
+.header_talleres .contenedor-img .img:nth-child(2n) {
   background-color: #1d1d1d;
-}
-.header_talleres .img:nth-child(3) {
-  width: 33.3%;
-  background-color: #242424;
 }
 .header_talleres h1 {
   position: absolute;
@@ -392,6 +436,32 @@ section .carrusel .carousel-inner img {
           transform: rotateY(0deg);
 }
 
+.header_nosotros {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 100%;
+  height: 50vh;
+  padding-bottom: 30px;
+  background-position: center;
+  background-size: cover;
+  background-color: #F2A413;
+}
+.header_nosotros h1 {
+  position: absolute;
+  bottom: 30px;
+  color: white;
+  font-weight: 700;
+}
+
 .pop {
   position: fixed;
   z-index: -1;
@@ -463,7 +533,9 @@ section .carrusel .carousel-inner img {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  height: 700px;
+  height: 60vh;
+  margin-top: 40px;
+  margin-bottom: 40px;
   padding-top: 60px;
   padding-bottom: 60px;
 }
@@ -474,7 +546,8 @@ section .carrusel .carousel-inner img {
   cursor: pointer;
 }
 .nosotros .persona .foto {
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
   aspect-ratio: 1/1;
   border-radius: 14px;
   background-color: #590209a6;
@@ -483,11 +556,58 @@ section .carrusel .carousel-inner img {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+.nosotros .persona.vertical {
+  -webkit-animation: vertical;
+          animation: vertical;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: cubic-bezier(0.68, -0.18, 0.53, 1.32);
+          animation-timing-function: cubic-bezier(0.68, -0.18, 0.53, 1.32);
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
 .nosotros .persona.especial {
   -ms-flex-item-align: end;
       align-self: flex-end;
 }
+.nosotros .persona.uno {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+.nosotros .persona.dos {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+.nosotros .persona.tres {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
 
+@-webkit-keyframes vertical {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20%);
+            transform: translateY(20%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@keyframes vertical {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20%);
+            transform: translateY(20%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
 .formulario {
   display: -webkit-box;
   display: -ms-flexbox;
