@@ -1,4 +1,6 @@
+
 $(function(){
+    $(".carga").addClass("hecha")
     // scroll nav
     $(window).scroll(function(){
         var alto = $(window).scrollTop();
@@ -13,19 +15,16 @@ $(function(){
         
     });
     
+    // scroll clases
     $(window).scroll(function(){
-        // scroll clases
-    
         scrollAnimation( "#animacion", "aparece-izq" );
         scrollAnimation( "#animacion2", "aparece-dcha" );
+        scrollAnimation( "#nosotros", "vertical" );
+
         
     });
+
     
-
-
-
-
-
 
 
     // click pop persona
@@ -38,10 +37,27 @@ $(function(){
         
     });
 
+
+
+    // hamburguesa
+    $(".hamburguer").click( function(){
+        console.log("clic")
+        $(".hamburguer").toggleClass("cruz");
+        $(".menu-mobile").toggleClass("open")
+
+    });
+
 });
 
 
+
+
+
 function scrollAnimation( id, clase ) {
+    console.log($(id).length);
+    if($(id).length==0){
+        return
+    }
     // indica cantidad de pixeles que hacemos scroll
     var scroll = $(window).scrollTop();
       

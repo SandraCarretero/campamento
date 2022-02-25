@@ -24,6 +24,34 @@ body{
 }
 
 
+// carga
+.carga{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    z-index: 200;
+    &.hecha{
+        animation: carga;
+        animation-fill-mode: both;
+        animation-timing-function: linear;
+        animation-duration: 2s;
+    }
+}
+@keyframes carga{
+    0%{
+        z-index: 200;
+    }
+    99%{
+        z-index: 200;
+    }
+    100%{
+        z-index: -1;
+    }
+}
+
+
+
 // navegador
 nav{
     position: fixed;
@@ -50,23 +78,121 @@ nav{
                 list-style: none;
                 display: inline;
                 cursor: pointer;
-            }
-            a{
-                margin: 20px;
-                text-decoration: none;
                 &:hover{
                     animation: blur;
                     animation-duration: 0.5s;
                     animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
                 }
             }
+            a{
+                margin: 20px;
+                text-decoration: none;
+            }
         }
     }
+    .menu-mobile{
+        display: none;
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 80vw;
+        height: 100vh;
+        background-color: #000000;
+        z-index: 100;
+        transition-property: all;
+        transition-duration: 1s;
+        transition-timing-function: ease-in-out;
+        ul{
+            margin: 0;
+            li{
+                text-align: left;
+                color: white;
+                list-style: none;
+                display: block;
+                cursor: pointer;
+                &:hover{
+                    animation: blur;
+                    animation-duration: 0.5s;
+                    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                }
+            }
+            a{
+                margin: 20px;
+                text-decoration: none;
+            }
+        }
+        &.open{
+            position: fixed;
+            left: 0;
+            transition-property: all;
+            transition-duration: 1s;
+            transition-timing-function: ease-in-out;
+        }
+    }
+    
     &.change{
         animation: change;
         animation-duration: 0.5s;
         animation-timing-function: ease-in-out;
         animation-fill-mode: both;
+    }
+    .hamburguer{
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        .line{
+            width: 30px;
+            height: 3px;
+            border-radius: 10px;
+            background-color: white;
+            &.uno{
+                transition-duration: 1s;
+                transition-property: all;
+                transition-timing-function: ease;
+                transform-origin: 0 center;
+            }
+            &.dos{
+                transition-duration: 1s;
+                transition-property: all;
+                transition-timing-function: ease;
+            }
+            &.tres{
+                transition-duration: 1s;
+                transition-property: all;
+                transition-timing-function: ease;
+                transform-origin: 0 center;
+            }
+        }
+        &.cruz{
+            .line{
+                &.uno{
+                    width: 37px;
+                    transform: rotate(45deg);
+                    transition-duration: 1s;
+                    transition-property: all;
+                    transition-timing-function: ease;
+                    transform-origin: 0 center;
+                }
+                &.dos{
+                    opacity: 0;
+                    transition-duration: 1s;
+                    transition-property: all;
+                    transition-timing-function: ease;
+                }
+                &.tres{
+                    width: 37px;
+                    transform: rotate(-45deg);
+                    transition-duration: 1s;
+                    transition-property: all;
+                    transition-timing-function: ease;
+                    transform-origin: 0 center;
+                
+                }  
+            }
+        }
     }
 }
 
@@ -90,6 +216,7 @@ nav{
         filter: blur(0px);
     }
 }
+
 
 
 
@@ -259,28 +386,19 @@ section{
 
 // cabecera
 .header_talleres{
+    position: relative;
+    display: flex;
     width: 100%;
-    height: 100vh;
-    padding-bottom: 115px;
-    padding-top: 100px;
+    height: 80vh;
+    padding-bottom: 30px;
     background-position: center;
     background-size: cover;
     background-color: black;
-    .contenedor-img{
-        width: 100%;
-        overflow: hidden;
-        white-space: nowrap;
-        .img{
-            width: 33.3%;
-            height: 80vh;
-            display: inline-block;
-            &:nth-child(2n+1){
-                background-color: rgb(36, 36, 36);
-            }
-            &:nth-child(2n){
-                background-color: rgb(29, 29, 29);
-            }
-        }
+    h1{
+        position: absolute;
+        bottom: 30px;
+        color: white;
+        font-weight: 700;
     }
     
     h1{
@@ -354,7 +472,7 @@ section{
     flex-direction: column;
     justify-content: flex-end;
     width: 100%;
-    height: 50vh;
+    height: 100vh;
     padding-bottom: 30px;
     background-position: center;
     background-size: cover;
@@ -403,9 +521,10 @@ section{
             .redes{
                 display: flex;
                 align-items: center;
+                justify-content: center;    
                 img{
                     width: 12%;
-                    margin: 15px 25px 15px 0;
+                    margin: 15px 25px;
                 }
             }
         }
@@ -427,11 +546,35 @@ section{
     margin-bottom: 40px;
     padding-top: 60px;
     padding-bottom: 60px;
+    &.vertical{
+        
+        .uno{
+            animation: vertical;
+            animation-duration: 1s;
+            animation-timing-function: cubic-bezier(0.68, -0.18, 0.53, 1.32);
+            animation-delay: 0s;
+            animation-fill-mode: both;
+        }
+        .dos{
+            animation: vertical;
+            animation-duration: 1s;
+            animation-timing-function: cubic-bezier(0.68, -0.18, 0.53, 1.32);
+            animation-delay: 0.2s;
+            animation-fill-mode: both;
+        }
+        .tres{
+            animation: vertical;
+            animation-duration: 1s;
+            animation-timing-function: cubic-bezier(0.68, -0.18, 0.53, 1.32);
+            animation-delay: 0.4s;
+            animation-fill-mode: both;
+        }
+    }
     .persona{
         width: 30%;
         aspect-ratio: 1/1;
         text-align: center;
-        cursor: pointer;
+        cursor: pointer; 
         .foto{
             width: 80%;
             margin: 0 auto;
@@ -443,24 +586,10 @@ section{
             padding-top: 20px;
             padding-bottom: 20px;
         }
-        &.vertical{
-            animation: vertical;
-            animation-duration: 1s;
-            animation-timing-function: cubic-bezier(0.68, -0.18, 0.53, 1.32);
-            animation-fill-mode: both;
-        }
         &.especial{
             align-self: flex-end;
         }
-        &.uno{
-            animation-delay: 0s;
-        }
-        &.dos{
-            animation-delay: 0.2s;
-        }
-        &.tres{
-            animation-delay: 0.4s;
-        }
+        
     }
 }
 
@@ -564,7 +693,20 @@ section{
 
 
 
-
+// MEDIA QUERIES
+@media screen and ( max-width: 768px ){
+    nav{
+        .menu{
+            display: none;
+        }
+        .menu-mobile{
+            display: block;
+        }
+        .hamburguer{
+            display: flex;
+        }
+    }
+}
 
 
 
