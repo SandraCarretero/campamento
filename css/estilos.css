@@ -88,7 +88,7 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 10px;
+  padding-top: 20px;
   padding-bottom: 10px;
 }
 nav .logo {
@@ -317,11 +317,11 @@ footer {
 
 .scroll {
   position: fixed;
-  bottom: 0;
+  top: 0;
   z-index: 200;
   width: 0;
   height: 10px;
-  background-color: greenyellow;
+  background-color: #590209;
 }
 
 .header_campamento {
@@ -339,9 +339,9 @@ footer {
   width: 100%;
   height: 80vh;
   padding-bottom: 30px;
+  background-image: url("../img/edwin-andrade-6liebVeAfrY-unsplash.jpg");
   background-position: center;
   background-size: cover;
-  background-color: #F2A413;
 }
 .header_campamento h1 {
   position: absolute;
@@ -377,12 +377,8 @@ section .carrusel .carousel-indicators [data-bs-target] {
   margin-left: 8px;
 }
 section .carrusel .carousel-inner {
-  background-color: #590209a6;
   border-radius: 14px;
   aspect-ratio: 3/2;
-}
-section .carrusel .carousel-inner img {
-  opacity: 0;
 }
 
 .contenedor-line {
@@ -407,6 +403,9 @@ section .carrusel .carousel-inner img {
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
 }
+.contenedor-line .line span {
+  margin: 12px;
+}
 
 @-webkit-keyframes lateral {
   0% {
@@ -414,8 +413,8 @@ section .carrusel .carousel-inner img {
             transform: translateX(0%);
   }
   100% {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+    -webkit-transform: translateX(-170%);
+            transform: translateX(-170%);
   }
 }
 
@@ -425,8 +424,8 @@ section .carrusel .carousel-inner img {
             transform: translateX(0%);
   }
   100% {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+    -webkit-transform: translateX(-170%);
+            transform: translateX(-170%);
   }
 }
 .clases {
@@ -578,8 +577,9 @@ section .carrusel .carousel-inner img {
           perspective: 1000px;
 }
 .actividades_talleres .card .front {
-  position: absolute;
-  color: white;
+  position: relative;
+  overflow: hidden;
+  color: black;
   background-color: #590209a6;
   width: 100%;
   height: 100%;
@@ -591,10 +591,16 @@ section .carrusel .carousel-inner img {
   -webkit-transition-timing-function: ease;
           transition-timing-function: ease;
 }
+.actividades_talleres .card .front h1 {
+  position: absolute;
+  top: 8px;
+}
 .actividades_talleres .card .back {
   position: absolute;
+  overflow: hidden;
+  padding: 20px;
   color: white;
-  background-color: #f2a413b7;
+  background-color: #f2a413;
   width: 100%;
   height: 100%;
   border-radius: 14px;
@@ -721,7 +727,7 @@ section .carrusel .carousel-inner img {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  height: 60vh;
+  height: 90vh;
   margin-top: 40px;
   margin-bottom: 40px;
   padding-top: 60px;
@@ -771,6 +777,7 @@ section .carrusel .carousel-inner img {
 }
 .nosotros .persona .foto {
   width: 80%;
+  overflow: hidden;
   margin: 0 auto;
   aspect-ratio: 1/1;
   border-radius: 14px;
@@ -810,6 +817,32 @@ section .carrusel .carousel-inner img {
             transform: translateY(0%);
   }
 }
+.header_contacto {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 100%;
+  height: 80vh;
+  padding-bottom: 30px;
+  background-color: #590209;
+  background-position: center;
+  background-size: cover;
+}
+.header_contacto h1 {
+  position: absolute;
+  bottom: 30px;
+  color: white;
+  font-weight: 700;
+}
+
 .formulario {
   display: -webkit-box;
   display: -ms-flexbox;

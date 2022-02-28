@@ -50,13 +50,13 @@ $(function(){
 
     $(window).scroll(function(){
         var scroll = $(window).scrollTop();
-        console.log("scroll:"+scroll);
+        // console.log("scroll:"+scroll);
 
         var height = $(document).height();
-        console.log("altura:"+height);
+        // console.log("altura:"+height);
 
         var ventana =$(window).height();
-        console.log("altura ventana:"+ventana);
+        // console.log("altura ventana:"+ventana);
 
         var scrollMax = height - ventana;
 
