@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 body{
+    background-color: white;
     margin: 0;
     font-family: 'Quicksand', sans-serif;
 }
@@ -29,24 +30,28 @@ body{
     position: fixed;
     width: 100%;
     height: 100vh;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     z-index: 200;
+    opacity: 1;
     &.hecha{
         animation: carga;
         animation-fill-mode: both;
-        animation-timing-function: linear;
-        animation-duration: 2s;
+        animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+        animation-duration: 0.1s;
     }
 }
 @keyframes carga{
     0%{
         z-index: 200;
+        opacity: 1;
     }
     99%{
         z-index: 200;
+        opacity: 1;
     }
     100%{
-        z-index: -1;
+        z-index: -10;
+        opacity: 0;
     }
 }
 
@@ -229,6 +234,16 @@ footer{
 
 
 
+// scroll
+.scroll{
+    position: fixed;
+    bottom: 0;
+    z-index: 200;
+    width: 0;
+    height: 10px;
+    background-color: greenyellow;
+}
+
 
 // campamento
 
@@ -275,6 +290,7 @@ section{
         .carousel-inner{
             background-color: $secondary-color;
             border-radius: 14px;
+            aspect-ratio: 3/2;
             img{
                 opacity: 0;
             }
@@ -432,6 +448,7 @@ section{
             background-color: $secondary-color;
             width: 100%;
             height: 100%;
+            border-radius: 14px;
             transition-property: all;
             transition-duration: 1s;
             transition-timing-function: ease;
@@ -443,6 +460,7 @@ section{
             background-color: #f2a413b7;
             width: 100%;
             height: 100%;
+            border-radius: 14px;
             transform: rotateY(-180deg);
             backface-visibility: hidden;
             transition-property: all;
@@ -525,6 +543,7 @@ section{
                 img{
                     width: 12%;
                     margin: 15px 25px;
+                    cursor: pointer;
                 }
             }
         }
@@ -649,7 +668,7 @@ section{
                 display: inherit;
                 width: 0%;
                 height: 2px;
-                background-image: linear-gradient(to bottom left, $main-color, $accent-color);
+                background-image: linear-gradient(to bottom left, $accent-color, $main-color);
                 transition: all;
                 transition-duration: 1s;
             }
@@ -665,9 +684,7 @@ section{
             border: 0;
             color: white;
             display: flex;
-            background-image: linear-gradient(to left, $accent-color, $main-color);
-            background-size: 200%;
-            background-position: right;
+            background-color: $secondary-color;
             justify-content: center;
             align-items: center;
             padding: 10px;
@@ -677,7 +694,7 @@ section{
             transition-property: all;
             transition-duration: 1s;
             &:hover{
-                background-position: left;
+                background-color: $main-color;
             }
             i{
                 margin: 0 10px;

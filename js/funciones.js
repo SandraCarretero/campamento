@@ -15,7 +15,7 @@ $(function(){
         
     });
     
-    // scroll clases
+    // scroll clases y personas
     $(window).scroll(function(){
         scrollAnimation( "#animacion", "aparece-izq" );
         scrollAnimation( "#animacion2", "aparece-dcha" );
@@ -47,6 +47,25 @@ $(function(){
 
     });
 
+
+    $(window).scroll(function(){
+        var scroll = $(window).scrollTop();
+        console.log("scroll:"+scroll);
+
+        var height = $(document).height();
+        console.log("altura:"+height);
+
+        var ventana =$(window).height();
+        console.log("altura ventana:"+ventana);
+
+        var scrollMax = height - ventana;
+
+        var carga = 100 * scroll / scrollMax
+
+        $(".scroll").css({"width": carga+"%"})
+
+    });
+
 });
 
 
@@ -67,7 +86,7 @@ function scrollAnimation( id, clase ) {
 
     // para sumar o restar la altura de las cajas
     var ventana = $(window).height();
-    console.log("altuta ventana:"+ventana);
+    console.log("altura ventana:"+ventana);
 
     // si el scroll es mayor que la distancia del elemento, añadimos clase
     if(scroll+ventana > distancia_elemento ){
