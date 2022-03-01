@@ -48,6 +48,7 @@ $(function(){
     });
 
 
+    // barra de scroll
     $(window).scroll(function(){
         var scroll = $(window).scrollTop();
         // console.log("scroll:"+scroll);
@@ -55,16 +56,29 @@ $(function(){
         var height = $(document).height();
         // console.log("altura:"+height);
 
-        var ventana =$(window).height();
+        var ventana = $(window).height();
         // console.log("altura ventana:"+ventana);
 
         var scrollMax = height - ventana;
 
         var carga = 100 * scroll / scrollMax
 
-        $(".scroll").css({"width": carga+"%"})
+        $(".scroll").css({
+            "width": carga+"%"
+            });
 
     });
+
+
+    // mover fondo header
+    $("#header").mousemove(function(e){
+        console.log(e.pageX, e.pageY)
+        $("#header").css({
+            "background-position-x": 70 +e.pageX/90 +"%",
+            "background-position-y": 70 +e.pageY/90 +"%",
+        });
+    });
+   
 
 });
 
@@ -86,7 +100,7 @@ function scrollAnimation( id, clase ) {
 
     // para sumar o restar la altura de las cajas
     var ventana = $(window).height();
-    console.log("altura ventana:"+ventana);
+    // console.log("altura ventana:"+ventana);
 
     // si el scroll es mayor que la distancia del elemento, añadimos clase
     if(scroll+ventana > distancia_elemento ){

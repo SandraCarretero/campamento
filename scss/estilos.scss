@@ -20,8 +20,8 @@ body{
 // @extend %flex-center-center;
 
 .main-padding{
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 130px;
+    padding-right: 130px;
 }
 
 
@@ -206,7 +206,7 @@ nav{
         background-color: transparent;
     }
     100%{
-        background-color: #000000e3;
+        background-color: #000000d1;
         backdrop-filter: blur(60px);
     }
 }
@@ -245,10 +245,9 @@ footer{
 }
 
 
-// campamento
 
 // cabecera
-.header_campamento{
+#header{
     position: relative;
     display: flex;
     flex-direction: column;
@@ -256,15 +255,22 @@ footer{
     width: 100%;
     height: 80vh;
     padding-bottom: 30px;
-    background-image: url("../img/edwin-andrade-6liebVeAfrY-unsplash.jpg");
-    background-position: center;
-    background-size: cover;
+    background-position: 70% 70%;
+    background-size: 140%;
     h1{
         position: absolute;
         bottom: 30px;
         color: white;
         font-weight: 700;
     }
+}
+
+
+// campamento
+#header{
+    &.header_campamento{
+        background-image: url("../img/edwin-andrade-6liebVeAfrY-unsplash.jpg");
+    }    
 }
 
 
@@ -291,7 +297,6 @@ section{
             // background-color: $secondary-color;
             border-radius: 14px;
             aspect-ratio: 3/2;
-            
         }
     }
 }
@@ -337,6 +342,7 @@ section{
         @extend %flex-center-center;
         .img{
             width: 100%;
+            overflow: hidden;
             margin-right: 30px;
             aspect-ratio: 3/2;
             border-radius: 14px;
@@ -359,6 +365,7 @@ section{
         margin-bottom: 60px;
         .img{
             width: 100%;
+            overflow: hidden;
             margin-left: 30px;
             aspect-ratio: 3/2;
             border-radius: 14px;
@@ -402,27 +409,9 @@ section{
 // talleres
 
 // cabecera
-.header_talleres{
-    position: relative;
-    display: flex;
-    width: 100%;
-    height: 80vh;
-    padding-bottom: 30px;
-    background-position: center;
-    background-size: cover;
-    background-color: black;
-    h1{
-        position: absolute;
-        bottom: 30px;
-        color: white;
-        font-weight: 700;
-    }
-    
-    h1{
-        position: absolute;
-        bottom: 30px;
-        color: white;
-        font-weight: 700;
+#header{
+    &.header_talleres{
+        background-color: black;
     }
 }
 
@@ -445,24 +434,30 @@ section{
         .front{
             position: relative;
             overflow: hidden;
-            color: black;
             @extend %flex-center-center;
-            background-color: $secondary-color;
             width: 100%;
             height: 100%;
             border-radius: 14px;
             transition-property: all;
             transition-duration: 1s;
             transition-timing-function: ease;
+            .oscuro{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: #00000063;
+
+            }
             h1{
                 position: absolute;
-                top: 8px;
+                color: white;
+                top: 30px;
             }
         }
         .back{
             position: absolute;
             overflow: hidden;
-            padding: 20px;
+            padding: 30px;
             color: white;
             @extend %flex-center-center;
             background-color: #f2a413;
@@ -474,6 +469,11 @@ section{
             transition-property: all;
             transition-duration: 1s;
             transition-timing-function: ease;
+            h1{
+                position: absolute;
+                color: white;
+                top: 30px;
+            }
         }
         &:hover .front{
             transform: rotateY(180deg);
@@ -492,22 +492,10 @@ section{
 // sobre nosotros
 
 // cabecera
-.header_nosotros{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    width: 100%;
-    height: 100vh;
-    padding-bottom: 30px;
-    background-position: center;
-    background-size: cover;
-    background-color: $accent-color;
-    h1{
-        position: absolute;
-        bottom: 30px;
-        color: white;
-        font-weight: 700;
+#header{
+    &.header_nosotros{
+        height: 100vh;
+        background-color: $accent-color;
     }
 }
 
@@ -550,7 +538,7 @@ section{
                 justify-content: center;    
                 img{
                     width: 12%;
-                    margin: 15px 25px;
+                    margin: 25px;
                     cursor: pointer;
                 }
             }
@@ -635,22 +623,9 @@ section{
 
 
 // contacto
-.header_contacto{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    width: 100%;
-    height: 80vh;
-    padding-bottom: 30px;
-    background-color: $main-color;
-    background-position: center;
-    background-size: cover;
-    h1{
-        position: absolute;
-        bottom: 30px;
-        color: white;
-        font-weight: 700;
+#header{
+    &.header_contacto{
+        background-color: $main-color;
     }
 }
 
