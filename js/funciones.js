@@ -5,7 +5,7 @@ $(function(){
     $(window).scroll(function(){
         var alto = $(window).scrollTop();
         // console.log(alto);
-        if(alto > 100){
+        if(alto > 70){
             $(".nav").addClass("change");
         }
         else{
