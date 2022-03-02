@@ -9,7 +9,7 @@ body {
   font-family: "Quicksand", sans-serif;
 }
 
-.pop, .actividades_talleres .card .back, .actividades_talleres .card .front, .clases .clase_teorica, .clases .clase_practica {
+.actividades_talleres .card .front, .clases .clase_practica, .clases .clase_teorica, footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -22,8 +22,12 @@ body {
 }
 
 .main-padding {
-  padding-left: 130px;
-  padding-right: 130px;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+h3 {
+  margin-bottom: 40px;
 }
 
 .carga {
@@ -311,8 +315,36 @@ nav .hamburguer.cruz .line.tres {
 }
 footer {
   width: 100%;
-  height: 100px;
   background-color: #333333;
+  overflow: hidden;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+footer .redes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 10px;
+}
+footer .redes a {
+  width: 4%;
+}
+footer .redes a img {
+  width: 60%;
+}
+footer .copy {
+  color: aliceblue;
+  font-variant: small-caps;
 }
 
 .scroll {
@@ -341,6 +373,7 @@ footer {
   padding-bottom: 30px;
   background-position: 70% 70%;
   background-size: 140%;
+  background-repeat: no-repeat;
 }
 #header h1 {
   position: absolute;
@@ -350,7 +383,7 @@ footer {
 }
 
 #header.header_campamento {
-  background-image: url("../img/pexels-pixabay-207896.jpg");
+  background-color: #590209a6;
 }
 
 section {
@@ -432,26 +465,27 @@ section .carrusel .carousel-inner {
   }
 }
 .clases {
+  margin-top: 0 auto;
   padding: 0 130px;
 }
-.clases .clase_practica {
+.clases .clase_teorica {
   position: relative;
   -webkit-transform: translateX(-100vw);
           transform: translateX(-100vw);
   margin-bottom: 60px;
 }
-.clases .clase_practica .img {
-  width: 100%;
+.clases .clase_teorica .img {
+  width: 80%;
   overflow: hidden;
   margin-right: 30px;
   aspect-ratio: 3/2;
   border-radius: 14px;
   background-color: #590209a6;
 }
-.clases .clase_practica .description {
+.clases .clase_teorica .description {
   width: 80%;
 }
-.clases .clase_practica.aparece-izq {
+.clases .clase_teorica.aparece-izq {
   -webkit-animation: aparece-izq;
           animation: aparece-izq;
   -webkit-animation-duration: 1s;
@@ -461,24 +495,24 @@ section .carrusel .carousel-inner {
   -webkit-animation-timing-function: ease-in-out;
           animation-timing-function: ease-in-out;
 }
-.clases .clase_teorica {
+.clases .clase_practica {
   position: relative;
   -webkit-transform: translateX(-100vw);
           transform: translateX(-100vw);
   margin-bottom: 60px;
 }
-.clases .clase_teorica .img {
-  width: 100%;
+.clases .clase_practica .img {
+  width: 80%;
   overflow: hidden;
   margin-left: 30px;
   aspect-ratio: 3/2;
   border-radius: 14px;
   background-color: #590209a6;
 }
-.clases .clase_teorica .description {
+.clases .clase_practica .description {
   width: 80%;
 }
-.clases .clase_teorica.aparece-dcha {
+.clases .clase_practica.aparece-dcha {
   -webkit-animation: aparece-dcha;
           animation: aparece-dcha;
   -webkit-animation-duration: 1s;
@@ -589,6 +623,18 @@ section .carrusel .carousel-inner {
   overflow: hidden;
   padding: 30px;
   color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #f2a413;
   width: 100%;
   height: 100%;
@@ -604,10 +650,8 @@ section .carrusel .carousel-inner {
   -webkit-transition-timing-function: ease;
           transition-timing-function: ease;
 }
-.actividades_talleres .card .back h1 {
-  position: absolute;
-  color: white;
-  top: 30px;
+.actividades_talleres .card .back p {
+  margin-bottom: 5rem;
 }
 .actividades_talleres .card:hover .front {
   -webkit-transform: rotateY(180deg);
@@ -625,83 +669,14 @@ section .carrusel .carousel-inner {
   background-image: url("../img/pexels-fauxels-3184421.jpg");
 }
 
-.pop {
-  position: fixed;
-  z-index: -1;
-  opacity: 0;
-  width: 100%;
-  height: 100vh;
-}
-.pop .fondo {
-  width: 100%;
-  height: 100vh;
-  background-color: #000000b0;
-}
-.pop .carnet {
-  position: absolute;
-  width: 60%;
-  aspect-ratio: 3/2;
-  padding: 60px;
-  background-color: #e6e6e6;
-  border-radius: 14px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.pop .carnet .cara-redes {
-  width: 30%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-.pop .carnet .cara-redes .cara {
-  width: 100%;
-  aspect-ratio: 1/1;
-  border-radius: 14px;
-  background-color: #590209a6;
-}
-.pop .carnet .cara-redes .redes {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-.pop .carnet .cara-redes .redes img {
-  width: 12%;
-  margin: 25px;
-  cursor: pointer;
-}
-.pop .carnet .caracteristicas {
-  width: 60%;
-}
-.pop.open {
-  z-index: 100;
-  opacity: 1;
-}
-
 .nosotros {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  height: 90vh;
-  margin-top: 40px;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin-top: 60px;
   margin-bottom: 40px;
   padding-top: 60px;
   padding-bottom: 60px;
@@ -743,10 +718,9 @@ section .carrusel .carousel-inner {
           animation-fill-mode: both;
 }
 .nosotros .persona {
-  width: 30%;
+  width: 26%;
   aspect-ratio: 1/1;
   text-align: center;
-  cursor: pointer;
 }
 .nosotros .persona .foto {
   width: 80%;
@@ -760,9 +734,9 @@ section .carrusel .carousel-inner {
   padding-top: 20px;
   padding-bottom: 20px;
 }
-.nosotros .persona.especial {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
+.nosotros .persona .nombre h3 {
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 @-webkit-keyframes vertical {
@@ -805,7 +779,7 @@ section .carrusel .carousel-inner {
 .formulario form {
   overflow: hidden;
   margin: 30px auto;
-  width: 46%;
+  width: 40%;
   background-color: white;
   border: 1px solid #ddd;
   border-radius: 14px;
@@ -898,7 +872,12 @@ section .carrusel .carousel-inner {
   background-color: #590209a6;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 424px) {
+  .main-padding {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
   nav .menu {
     display: none;
   }
@@ -909,5 +888,81 @@ section .carrusel .carousel-inner {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+  }
+
+  footer .redes a {
+    width: 6%;
+  }
+  footer .redes a img {
+    width: 67%;
+  }
+
+  h3 {
+    margin-bottom: 15px;
+  }
+
+  #header {
+    height: 45vh;
+  }
+
+  section {
+    display: block;
+  }
+
+  .contenedor-line .line {
+    font-size: 30px;
+    margin: 20px auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .clases .clase_teorica {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .clases .clase_teorica .img {
+    margin: 0;
+  }
+  .clases .clase_teorica .description {
+    text-align: center;
+  }
+  .clases .clase_teorica .description h3 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .clases .clase_practica {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .clases .clase_practica .img {
+    margin: 0;
+  }
+  .clases .clase_practica .description {
+    text-align: center;
+  }
+  .clases .clase_practica .description h3 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}
+@media (min-width: 425px) and (max-width: 767px) {
+  nav .menu {
+    display: none;
+  }
+  nav .menu-mobile {
+    display: block;
+  }
+  nav .hamburguer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  #header {
+    height: 45vh;
   }
 }

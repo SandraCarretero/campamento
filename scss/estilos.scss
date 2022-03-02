@@ -20,10 +20,13 @@ body{
 // @extend %flex-center-center;
 
 .main-padding{
-    padding-left: 130px;
-    padding-right: 130px;
+    padding-left: 60px;
+    padding-right: 60px;
 }
 
+h3{
+    margin-bottom: 40px;
+}
 
 // carga
 .carga{
@@ -228,8 +231,28 @@ nav{
 // footer
 footer{
     width: 100%;
-    height: 100px;
     background-color: rgb(51, 51, 51);
+    overflow: hidden;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    @extend %flex-center-center;
+    flex-direction: column;
+    .redes{
+        display: flex;
+        align-items: center;
+        justify-content: center;  
+        padding-bottom: 10px;  
+        a{
+            width: 4%;
+            img{
+                width: 60%;
+            }
+        }
+    }
+    .copy{
+        color: aliceblue;
+        font-variant: small-caps;
+    }
 }
 
 
@@ -257,6 +280,7 @@ footer{
     padding-bottom: 30px;
     background-position: 70% 70%;
     background-size: 140%;
+    background-repeat: no-repeat;
     h1{
         position: absolute;
         bottom: 30px;
@@ -269,7 +293,8 @@ footer{
 // campamento
 #header{
     &.header_campamento{
-        background-image: url("../img/pexels-pixabay-207896.jpg");
+        // background-image: url("../img/pexels-pixabay-207896.jpg");
+        background-color: $secondary-color;
     }    
 }
 
@@ -281,7 +306,7 @@ section{
     align-items: center;
     padding-top: 50px;
     .text{
-        padding-right: 20px
+        padding-right: 20px;
     }
     .carrusel{
         padding: 20px;
@@ -334,14 +359,15 @@ section{
 
 
 .clases{
+    margin-top: 0 auto;
     padding: 0 130px;
-    .clase_practica{
+    .clase_teorica{
         position: relative;
         transform: translateX(-100vw);
         margin-bottom: 60px;
         @extend %flex-center-center;
         .img{
-            width: 100%;
+            width: 80%;
             overflow: hidden;
             margin-right: 30px;
             aspect-ratio: 3/2;
@@ -358,13 +384,13 @@ section{
             animation-timing-function: ease-in-out;
         }
     }
-    .clase_teorica{
+    .clase_practica{
         position: relative;
         transform: translateX(-100vw);
         @extend %flex-center-center;
         margin-bottom: 60px;
         .img{
-            width: 100%;
+            width: 80%;
             overflow: hidden;
             margin-left: 30px;
             aspect-ratio: 3/2;
@@ -459,7 +485,10 @@ section{
             overflow: hidden;
             padding: 30px;
             color: white;
-            @extend %flex-center-center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
             background-color: #f2a413;
             width: 100%;
             height: 100%;
@@ -469,10 +498,8 @@ section{
             transition-property: all;
             transition-duration: 1s;
             transition-timing-function: ease;
-            h1{
-                position: absolute;
-                color: white;
-                top: 30px;
+            p{
+                margin-bottom: 5rem;
             }
         }
         &:hover .front{
@@ -500,64 +527,10 @@ section{
 }
 
 // personas
-.pop{
-    position: fixed;
-    z-index: -1;
-    opacity: 0;
-    width: 100%;
-    height: 100vh;
-    @extend %flex-center-center;
-    .fondo{
-        width: 100%;
-        height: 100vh;
-        background-color: #000000b0;
-    }
-    .carnet{
-        position: absolute;
-        width: 60%;
-        aspect-ratio: 3/2;
-        padding: 60px;
-        background-color: #e6e6e6;
-        border-radius: 14px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        .cara-redes{
-            width: 30%;
-            display: flex;
-            flex-direction: column;
-            .cara{
-                width: 100%;
-                aspect-ratio: 1/1;
-                border-radius: 14px;
-                background-color: $secondary-color;
-            }
-            .redes{
-                display: flex;
-                align-items: center;
-                justify-content: center;    
-                img{
-                    width: 12%;
-                    margin: 25px;
-                    cursor: pointer;
-                }
-            }
-        }
-        .caracteristicas{
-            width: 60%;
-        }
-    }
-    &.open{
-        z-index: 100;
-        opacity: 1;
-    }
-}
-
 .nosotros{
     display: flex;
-    justify-content: space-around;
-    height: 90vh;
-    margin-top: 40px;
+    justify-content: space-evenly;
+    margin-top: 60px;
     margin-bottom: 40px;
     padding-top: 60px;
     padding-bottom: 60px;
@@ -586,10 +559,9 @@ section{
         }
     }
     .persona{
-        width: 30%;
+        width: 26%;
         aspect-ratio: 1/1;
         text-align: center;
-        cursor: pointer; 
         .foto{
             width: 80%;
             overflow: hidden;
@@ -601,11 +573,11 @@ section{
         .nombre{
             padding-top: 20px;
             padding-bottom: 20px;
+            h3{
+                margin-bottom: 10px;
+                margin-top: 10px;
+            }
         }
-        &.especial{
-            align-self: flex-end;
-        }
-        
     }
 }
 
@@ -635,7 +607,7 @@ section{
     form{
         overflow: hidden;
         margin: 30px auto;
-        width: 46%;
+        width: 40%;
         background-color: white;
         border: 1px solid #ddd;
         border-radius: 14px;
@@ -714,7 +686,12 @@ section{
 
 
 // MEDIA QUERIES
-@media screen and ( max-width: 768px ){
+// movil s
+@media screen and ( max-width: 424px ){
+    .main-padding{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
     nav{
         .menu{
             display: none;
@@ -726,8 +703,114 @@ section{
             display: flex;
         }
     }
+
+    footer{
+        .redes{
+            a{
+                width: 6%;
+                img{
+                    width: 67%;
+                }
+            }
+        }
+    }
+
+    h3{
+        margin-bottom: 15px;
+    }
+
+    #header{
+        height: 45vh;
+    }
+
+    // campamento
+    section{
+        display: block;
+    }
+
+    .contenedor-line{
+        .line{
+            font-size: 30px;
+            margin: 20px auto;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    }
+
+    .clases{
+        .clase_teorica{
+            @extend %flex-center-center;
+            flex-direction: column;
+            .img{
+                margin: 0;
+            }
+            .description{
+                text-align: center;
+                h3{
+                    margin-top: 15px;
+                    margin-bottom: 15px;
+                }
+            }
+        }
+        .clase_practica{
+            @extend %flex-center-center;
+            flex-direction: column-reverse;
+            .img{
+                margin: 0;
+            }
+            .description{
+                text-align: center;
+                h3{
+                    margin-top: 15px;
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+
+    // talleres
+
 }
 
+// movil l
+@media ( min-width: 425px) and ( max-width: 767px ){
+    nav{
+        .menu{
+            display: none;
+        }
+        .menu-mobile{
+            display: block;
+        }
+        .hamburguer{
+            display: flex;
+        }
+    }
+
+    #header{
+        height: 45vh;
+    }
+
+}
+
+// tablet
+@media ( min-width: 768px) and ( max-width: 1023px ){
+
+}
+
+// laptop
+@media ( min-width: 1024px) and ( max-width: 1439px ){
+
+}
+
+// laptop xl
+@media ( min-width: 1440px) and ( max-width: 2559px ){
+
+}
+
+// pantalla grande
+@media ( min-width: 2560px){
+
+}
 
 
 

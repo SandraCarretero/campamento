@@ -20,20 +20,9 @@ $(function(){
         scrollAnimation( "#animacion", "aparece-izq" );
         scrollAnimation( "#animacion2", "aparece-dcha" );
         scrollAnimation( "#nosotros", "vertical" );
-
-        
-    });
-
-    
+        scrollAnimation( "#nosotros2", "vertical" );
 
 
-    // click pop persona
-    $(".persona").click( function(){
-        $(".pop").addClass("open");
-
-    });
-    $(".fondo").click( function(){
-        $(".pop").removeClass("open");
         
     });
 
