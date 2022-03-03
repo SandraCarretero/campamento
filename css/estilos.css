@@ -466,7 +466,6 @@ section .carrusel .carousel-inner {
 }
 .clases {
   margin-top: 0 auto;
-  padding: 0 130px;
 }
 .clases .clase_teorica {
   position: relative;
@@ -576,13 +575,15 @@ section .carrusel .carousel-inner {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  margin-top: 80px;
-  margin-bottom: 80px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 .actividades_talleres .card {
   border: none;
   position: relative;
   width: 30%;
+  margin-top: 60px;
+  margin-bottom: 40px;
   aspect-ratio: 2/3;
   cursor: pointer;
   -webkit-transition-property: all;
@@ -651,7 +652,7 @@ section .carrusel .carousel-inner {
           transition-timing-function: ease;
 }
 .actividades_talleres .card .back p {
-  margin-bottom: 5rem;
+  text-align: center;
 }
 .actividades_talleres .card:hover .front {
   -webkit-transform: rotateY(180deg);
@@ -721,6 +722,16 @@ section .carrusel .carousel-inner {
   width: 26%;
   aspect-ratio: 1/1;
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .nosotros .persona .foto {
   width: 80%;
@@ -871,8 +882,11 @@ section .carrusel .carousel-inner {
   padding: 20px;
   background-color: #590209a6;
 }
+.formulario .mapa iframe {
+  height: 450px;
+}
 
-@media screen and (max-width: 424px) {
+@media screen and (max-width: 767px) {
   .main-padding {
     padding-left: 30px;
     padding-right: 30px;
@@ -907,6 +921,9 @@ section .carrusel .carousel-inner {
 
   section {
     display: block;
+  }
+  section .text {
+    text-align: center;
   }
 
   .contenedor-line .line {
@@ -948,21 +965,132 @@ section .carrusel .carousel-inner {
     margin-top: 15px;
     margin-bottom: 15px;
   }
-}
-@media (min-width: 425px) and (max-width: 767px) {
-  nav .menu {
-    display: none;
+
+  .actividades_talleres {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 0;
+    margin-bottom: 0;
   }
-  nav .menu-mobile {
-    display: block;
+  .actividades_talleres .card {
+    width: 75%;
+    margin-bottom: 30px;
+    margin-top: 30px;
   }
-  nav .hamburguer {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+  .actividades_talleres .card .back {
+    padding: 16px;
+  }
+  .actividades_talleres .card .back p {
+    font-size: 12px;
   }
 
-  #header {
+  #header.header_nosotros {
     height: 45vh;
+    background-image: none;
+    background-color: #F2A413;
+  }
+
+  .nosotros {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  .nosotros .persona {
+    width: 75%;
+    margin-top: 35px;
+  }
+  .nosotros .persona.dos {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+
+  .formulario {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+  .formulario form {
+    width: 95%;
+    margin: 0;
+  }
+  .formulario form label {
+    margin-bottom: 6px;
+  }
+  .formulario .mapa {
+    width: 95%;
+    margin-top: 30px;
+  }
+  .formulario .mapa iframe {
+    height: 260px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .actividades_talleres {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .actividades_talleres .card {
+    width: 40%;
+    margin: 12px;
+  }
+  .actividades_talleres .card .back {
+    padding: 24px;
+  }
+  .actividades_talleres .card .back p {
+    font-size: 14px;
+  }
+
+  #header.header_nosotros {
+    height: 100vh;
+    background-image: none;
+    background-color: #F2A413;
+  }
+
+  .nosotros {
+    margin: 0;
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+  .nosotros .persona {
+    width: 35%;
+  }
+
+  .formulario {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+  .formulario form {
+    width: 95%;
+    margin: 0;
+  }
+  .formulario form label {
+    margin-bottom: 6px;
+  }
+  .formulario .mapa {
+    width: 95%;
+    margin-top: 30px;
+  }
+  .formulario .mapa iframe {
+    height: 260px;
   }
 }

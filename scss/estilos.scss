@@ -360,7 +360,6 @@ section{
 
 .clases{
     margin-top: 0 auto;
-    padding: 0 130px;
     .clase_teorica{
         position: relative;
         transform: translateX(-100vw);
@@ -445,12 +444,13 @@ section{
 .actividades_talleres{
     display: flex;
     justify-content: space-around;
-    margin-top: 80px;
-    margin-bottom: 80px;
+    flex-wrap: wrap;
     .card{
         border: none;
         position: relative;
         width: 30%;
+        margin-top: 60px;
+        margin-bottom: 40px;
         aspect-ratio: 2/3;
         cursor: pointer;
         transition-property: all;
@@ -499,7 +499,7 @@ section{
             transition-duration: 1s;
             transition-timing-function: ease;
             p{
-                margin-bottom: 5rem;
+                text-align: center;
             }
         }
         &:hover .front{
@@ -562,6 +562,9 @@ section{
         width: 26%;
         aspect-ratio: 1/1;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         .foto{
             width: 80%;
             overflow: hidden;
@@ -680,14 +683,17 @@ section{
         width: 46%;
         padding: 20px;
         background-color: $secondary-color;
+        iframe{
+            height: 450px;
+        }
     }
 }
 
 
 
 // MEDIA QUERIES
-// movil s
-@media screen and ( max-width: 424px ){
+// movil
+@media screen and ( max-width: 767px ){
     .main-padding{
         padding-left: 30px;
         padding-right: 30px;
@@ -723,9 +729,12 @@ section{
         height: 45vh;
     }
 
-    // campamento
+    
     section{
         display: block;
+        .text{
+            text-align: center;
+        }
     }
 
     .contenedor-line{
@@ -765,35 +774,131 @@ section{
                     margin-bottom: 15px;
                 }
             }
+        } 
+    }
+
+
+    .actividades_talleres{
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0;
+        margin-bottom: 0;
+        .card{
+            width: 75%;
+            margin-bottom: 30px;
+            margin-top: 30px;
+            .back{
+                padding: 16px;
+                p{
+                    font-size: 12px;
+                }
+            }
         }
     }
 
-    // talleres
-
-}
-
-// movil l
-@media ( min-width: 425px) and ( max-width: 767px ){
-    nav{
-        .menu{
-            display: none;
-        }
-        .menu-mobile{
-            display: block;
-        }
-        .hamburguer{
-            display: flex;
-        }
-    }
 
     #header{
+    &.header_nosotros{
         height: 45vh;
+        background-image: none;
+        background-color: $accent-color;
+        }
+    }
+    .nosotros{
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        .persona{
+            width: 75%;
+            margin-top: 35px;
+            &.dos{
+                flex-direction: column-reverse;
+            }
+        }
+    }
+
+
+
+    .formulario{
+        flex-direction: column;
+        margin-bottom: 30px;
+        margin-top: 30px;
+        form{
+            width: 95%;
+            margin: 0;
+            label{
+                margin-bottom: 6px;
+            }
+        }
+        .mapa{
+            width: 95%;
+            margin-top: 30px;
+            iframe{
+                height: 260px;
+            }
+        }
     }
 
 }
+
+
+
 
 // tablet
 @media ( min-width: 768px) and ( max-width: 1023px ){
+    .actividades_talleres{
+        margin-top: 40px;
+        margin-bottom: 40px;
+        .card{
+            width: 40%;
+            margin: 12px;
+            .back{
+                padding: 24px;
+                p{
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+
+    #header{
+        &.header_nosotros{
+            height: 100vh;
+            background-image: none;
+            background-color: $accent-color;
+        }
+    }
+    .nosotros{
+        margin: 0;
+        padding-top: 45px;
+        padding-bottom: 45px;
+        .persona{
+            width: 35%;
+        }
+    }
+
+
+    .formulario{
+        flex-direction: column;
+        margin-bottom: 30px;
+        margin-top: 30px;
+        form{
+            width: 95%;
+            margin: 0;
+            label{
+                margin-bottom: 6px;
+            }
+        }
+        .mapa{
+            width: 95%;
+            margin-top: 30px;
+            iframe{
+                height: 260px;
+            }
+        }
+    }
 
 }
 
