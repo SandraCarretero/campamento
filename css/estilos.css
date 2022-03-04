@@ -1125,13 +1125,13 @@ section .carrusel .carousel-inner {
   }
 
   .actividades_talleres .card .front h1 {
-    font-size: 3vw;
+    font-size: 2.6vw;
   }
   .actividades_talleres .card .back {
     padding: 40px;
   }
   .actividades_talleres .card .back h1 {
-    font-size: 3vw;
+    font-size: 2.6vw;
   }
   .actividades_talleres .card .back p {
     font-size: 1vw;
@@ -1171,13 +1171,13 @@ section .carrusel .carousel-inner {
   }
 
   .actividades_talleres .card .front h1 {
-    font-size: 3.5vw;
+    font-size: 3vw;
   }
   .actividades_talleres .card .back {
     padding: 80px;
   }
   .actividades_talleres .card .back h1 {
-    font-size: 3.5vw;
+    font-size: 3vw;
   }
   .actividades_talleres .card .back p {
     font-size: 1vw;
