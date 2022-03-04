@@ -1,7 +1,16 @@
+// carga
+// cuando estén vargadas imágenes. vídeos quitar pantalla de carga
+$(window).on("load", function(){
 
+    setTimeout( function(){
+        // retrasar un tiempo una accion
+        $(".carga").fadeOut(500);
+    }, 700 )
+})
+
+
+// elementos del DOM estén listos para ser accedidos
 $(function(){
-    $(".carga").addClass("hecha")
-    // scroll nav
     $(window).scroll(function(){
         var alto = $(window).scrollTop();
         // console.log(alto);
