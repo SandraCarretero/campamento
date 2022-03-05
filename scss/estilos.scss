@@ -35,22 +35,7 @@ h3{
     height: 100vh;
     background-color: #afdaff;
     z-index: 200;
-    opacity: 1;
-    
-}
-@keyframes carga{
-    0%{
-        z-index: 200;
-        opacity: 1;
-    }
-    99%{
-        z-index: 200;
-        opacity: 1;
-    }
-    100%{
-        z-index: -10;
-        opacity: 0;
-    }
+    @extend %flex-center-center;
 }
 
 
@@ -990,7 +975,7 @@ section{
 
 
 // pantalla grande
-@media ( min-width: 2250px) and ( max-width: 2559px ){
+@media ( min-width: 2250px) and ( max-width: 3000px ){
     p{
         font-size: 20px;
     }

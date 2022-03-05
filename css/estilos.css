@@ -9,7 +9,7 @@ body {
   font-family: "Quicksand", sans-serif;
 }
 
-.actividades_talleres .card .front, .clases .clase_practica, .clases .clase_teorica, footer {
+.actividades_talleres .card .front, .clases .clase_practica, .clases .clase_teorica, footer, .carga {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -36,38 +36,8 @@ h3 {
   height: 100vh;
   background-color: #afdaff;
   z-index: 200;
-  opacity: 1;
 }
 
-@-webkit-keyframes carga {
-  0% {
-    z-index: 200;
-    opacity: 1;
-  }
-  99% {
-    z-index: 200;
-    opacity: 1;
-  }
-  100% {
-    z-index: -10;
-    opacity: 0;
-  }
-}
-
-@keyframes carga {
-  0% {
-    z-index: 200;
-    opacity: 1;
-  }
-  99% {
-    z-index: 200;
-    opacity: 1;
-  }
-  100% {
-    z-index: -10;
-    opacity: 0;
-  }
-}
 nav {
   position: fixed;
   z-index: 100;
@@ -1151,7 +1121,7 @@ section .carrusel .carousel-inner {
     height: 530px;
   }
 }
-@media (min-width: 2250px) and (max-width: 2559px) {
+@media (min-width: 2250px) and (max-width: 3000px) {
   p {
     font-size: 20px;
   }
