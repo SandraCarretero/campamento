@@ -33,10 +33,52 @@ h3{
     position: fixed;
     width: 100%;
     height: 100vh;
-    background-color: #afdaff;
+    background-color: $main-color;
     z-index: 200;
     @extend %flex-center-center;
+    .loader{
+        font-size: 20px;
+        margin: 45% auto;
+        width: 1em;
+        height: 1em;
+        border-radius: 50%;
+        position: relative;
+        text-indent: -9999em;
+        animation: load4 1.3s infinite linear;
+    }
 }
+    
+
+@keyframes load4 {
+    0%,
+    100% {
+      box-shadow: 0em -3em 0em 0.2em #ffffff, 2em -2em 0 0em #ffffff, 3em 0em 0 -0.5em #ffffff, 2em 2em 0 -0.5em #ffffff, 0em 3em 0 -0.5em #ffffff, -2em 2em 0 -0.5em #ffffff, -3em 0em 0 -0.5em #ffffff, -2em -2em 0 0em #ffffff;
+    }
+    12.5% {
+      box-shadow: 0em -3em 0em 0em #ffffff, 2em -2em 0 0.2em #ffffff, 3em 0em 0 0em #ffffff, 2em 2em 0 -0.5em #ffffff, 0em 3em 0 -0.5em #ffffff, -2em 2em 0 -0.5em #ffffff, -3em 0em 0 -0.5em #ffffff, -2em -2em 0 -0.5em #ffffff;
+    }
+    25% {
+      box-shadow: 0em -3em 0em -0.5em #ffffff, 2em -2em 0 0em #ffffff, 3em 0em 0 0.2em #ffffff, 2em 2em 0 0em #ffffff, 0em 3em 0 -0.5em #ffffff, -2em 2em 0 -0.5em #ffffff, -3em 0em 0 -0.5em #ffffff, -2em -2em 0 -0.5em #ffffff;
+    }
+    37.5% {
+      box-shadow: 0em -3em 0em -0.5em #ffffff, 2em -2em 0 -0.5em #ffffff, 3em 0em 0 0em #ffffff, 2em 2em 0 0.2em #ffffff, 0em 3em 0 0em #ffffff, -2em 2em 0 -0.5em #ffffff, -3em 0em 0 -0.5em #ffffff, -2em -2em 0 -0.5em #ffffff;
+    }
+    50% {
+      box-shadow: 0em -3em 0em -0.5em #ffffff, 2em -2em 0 -0.5em #ffffff, 3em 0em 0 -0.5em #ffffff, 2em 2em 0 0em #ffffff, 0em 3em 0 0.2em #ffffff, -2em 2em 0 0em #ffffff, -3em 0em 0 -0.5em #ffffff, -2em -2em 0 -0.5em #ffffff;
+    }
+    62.5% {
+      box-shadow: 0em -3em 0em -0.5em #ffffff, 2em -2em 0 -0.5em #ffffff, 3em 0em 0 -0.5em #ffffff, 2em 2em 0 -0.5em #ffffff, 0em 3em 0 0em #ffffff, -2em 2em 0 0.2em #ffffff, -3em 0em 0 0em #ffffff, -2em -2em 0 -0.5em #ffffff;
+    }
+    75% {
+      box-shadow: 0em -3em 0em -0.5em #ffffff, 2em -2em 0 -0.5em #ffffff, 3em 0em 0 -0.5em #ffffff, 2em 2em 0 -0.5em #ffffff, 0em 3em 0 -0.5em #ffffff, -2em 2em 0 0em #ffffff, -3em 0em 0 0.2em #ffffff, -2em -2em 0 0em #ffffff;
+    }
+    87.5% {
+      box-shadow: 0em -3em 0em 0em #ffffff, 2em -2em 0 -0.5em #ffffff, 3em 0em 0 -0.5em #ffffff, 2em 2em 0 -0.5em #ffffff, 0em 3em 0 -0.5em #ffffff, -2em 2em 0 0em #ffffff, -3em 0em 0 0em #ffffff, -2em -2em 0 0.2em #ffffff;
+    }
+  }
+ 
+
+
 
 // cookies
 .cookies{
@@ -734,6 +776,17 @@ section{
         padding-left: 30px;
         padding-right: 30px;
     }
+
+    .cookies{
+        .mensaje{
+            width: 85%;  
+            font-size: 12px;
+            &.appear{
+                bottom: 30px;
+            }
+        }
+    }
+
     nav{
         .menu{
             display: none;
@@ -883,6 +936,16 @@ section{
 
 // tablet
 @media ( min-width: 768px) and ( max-width: 1023px ){
+
+    .cookies{
+        .mensaje{
+            width: 75%;  
+            &.appear{
+                bottom: 35px;
+            }
+        }
+    }
+
     section{
         display: block;
         .carrusel{
@@ -942,6 +1005,16 @@ section{
 
 // laptop
 @media ( min-width: 1024px) and ( max-width: 1439px ){
+
+    .cookies{
+        .mensaje{
+            width: 60%;  
+            &.appear{
+                bottom: 40px;
+            }
+        }
+    }
+
     section{
         .carrusel{
             min-width: 500px;
@@ -981,6 +1054,16 @@ section{
         padding-left: 180px;
         padding-right: 180px;
     }
+
+    .cookies{
+        .mensaje{
+            width: 55%;  
+            &.appear{
+                bottom: 35px;
+            }
+        }
+    }
+
     section{
         .carrusel{
             width: 60%;
@@ -1034,6 +1117,16 @@ section{
     p{
         font-size: 20px;
     }
+
+    .cookies{
+        .mensaje{
+            width: 40%;  
+            &.appear{
+                bottom: 50px;
+            }
+        }
+    }
+
     .main-padding{
         padding-left: 300px;
         padding-right: 300px;

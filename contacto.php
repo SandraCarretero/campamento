@@ -77,7 +77,9 @@
 <body>
 
     <div class="carga">
-        
+        <div class="loader">
+            
+        </div>
     </div>
 
     
