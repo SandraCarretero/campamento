@@ -59,7 +59,7 @@
 
     // print_r($_POST["name"]); $_POST["name"] lo sustituyo con la variable
     // para que se vea en pantalla
-    print_r($nombre);
+    // print_r($nombre);
 
 
     // enviar correo

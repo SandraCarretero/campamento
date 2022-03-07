@@ -38,6 +38,53 @@ h3{
     @extend %flex-center-center;
 }
 
+// cookies
+.cookies{
+    @extend %flex-center-center;
+    .mensaje{
+        @extend %flex-center-center;
+        flex-direction: column;
+        position: fixed;
+        bottom: -100%;
+        z-index: 120;
+        width: 30%;
+        overflow: hidden;
+        border-radius: 5px;
+        padding: 30px;
+        background-color: #ffffff4d;
+        backdrop-filter: blur(10px);
+        text-align: center;
+        transition-property: all;
+        transition-duration: 1s;
+        transition-timing-function: ease-in-out;            
+        .botones{
+            @extend %flex-center-center;
+            button{
+                background-color: black;
+                color: white;
+                border: none;
+                padding: 8px;
+                margin-right: 12px;
+            }
+        }
+        &.appear{
+            bottom: 70px;
+            transition-property: all;
+            transition-duration: 2s;
+            transition-timing-function: ease-in-out;
+        }
+    }
+}
+
+@keyframes appear{
+    0%{
+        bottom: -100%;
+    }
+    100%{
+        bottom: 70px;
+    }
+}
+
 
 
 // navegador
@@ -587,6 +634,14 @@ section{
 .formulario{
     display: flex;
     align-items: center;
+    .exito{
+        // display: none;
+        width: 50%;
+        height: 200px;
+        padding: 100px;
+        background-color: #ffffff;
+        @extend %flex-center-center;
+    }
     form{
         overflow: hidden;
         margin: 30px auto;
@@ -923,8 +978,8 @@ section{
 // laptop l
 @media ( min-width: 1440px) and ( max-width: 2249px ){
     .main-padding{
-        padding-left: 300px;
-        padding-right: 300px;
+        padding-left: 180px;
+        padding-right: 180px;
     }
     section{
         .carrusel{

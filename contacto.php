@@ -1,3 +1,57 @@
+<?php
+    // TRAEMOS EL PHP
+    // viene el FORM de CONTACTO?
+    // print_r($_POST);
+    // partimos de la base de que no se ha enviado
+    $envioMail = false;
+
+    
+    if( 
+        // isset es si existen las variables
+        isset($_POST["name"]) && 
+        isset($_POST["apellido"]) &&
+        isset($_POST["email"]) &&
+        isset($_POST["mensaje"])
+
+    ){
+        // lo que hacemos si hay informacion enviada del FORM
+        $nombre = $_POST["name"];
+        $apellido = $_POST["apellido"];
+        $email = $_POST["email"];
+        $mensaje = $_POST["mensaje"];
+        
+    
+        $to = "sandracarretero24@gmail.com";
+    
+        $subject = "Consulta en la web";
+    
+        $message = "<html> 
+                    <head></head>
+                    <body>
+                        <h1>Consulta en la web </h1>
+                        <p> $mensaje </p>
+                    </body>
+        
+                    </html>";
+    
+    
+        $headers = "MINE-Version: 1.0 \r\n";
+    
+        $headers .="Content-type:text/html:charset=UTF-8 \r\n" ;
+        $headers .= "From: $email \r\n ";
+    
+        
+        $envioMail = mail($to, $subject, $message, $headers);
+
+    }
+
+
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,6 +79,7 @@
     <div class="carga">
         
     </div>
+
     
     <nav class="nav main-padding">
       <div class="logo">
@@ -35,7 +90,7 @@
               <a href="index.html"><li>Campamento</li></a>
               <a href="talleres.html"><li>Talleres</li></a>
               <a href="nosotros.html"><li>Sobre nosotros</li></a>
-              <a href="contacto.html"><li>Contacto</li></a>
+              <a href="contacto.php"><li>Contacto</li></a>
           </ul>
       </div>
       <div class="menu-mobile">
@@ -43,7 +98,7 @@
             <a href="index.html"><li>Campamento</li></a>
             <a href="talleres.html"><li>Talleres</li></a>
             <a href="nosotros.html"><li>Sobre nosotros</li></a>
-            <a href="contacto.html"><li>Contacto</li></a>
+            <a href="contacto.php"><li>Contacto</li></a>
         </ul>
     </div>
       <div class="hamburguer">
@@ -57,8 +112,25 @@
         <h1>Contacto</h1>
     </header>
 
+    
+
     <div class="formulario main-padding">
-        <form action="sendEmail.php" method="POST">
+
+    <?php
+        if($envioMail == true){
+    ?>
+        <div class="exito">
+            <div class="mensaje">
+                <h4>¡Gracias por contactar con nosotros!</h4> 
+                <p>Tu correo ha sido enviado con éxito. Te contestaremos lo antes posible.</p>
+            </div>
+        </div>
+    <?php
+
+        }else{
+    ?>
+
+        <form action="" method="POST">
             <div class="nombre">
                 <label for="name">Tu nombre</label>
                 <input type="text" name="name" id="name" placeholder="Escribe tu nombre" autocomplete="off">
@@ -88,6 +160,11 @@
             </button>
             
         </form>
+    <?php
+    }
+    ?>
+
+
         <div class="mapa">
             <div class="google-maps">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12149.493594549376!2d-3.7130592500000006!3d40.42273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1645603797107!5m2!1ses!2ses" width="100%"  style="border:0;" allowfullscreen="" loading="lazy"></iframe>

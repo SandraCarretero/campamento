@@ -9,7 +9,7 @@ body {
   font-family: "Quicksand", sans-serif;
 }
 
-.actividades_talleres .card .front, .clases .clase_practica, .clases .clase_teorica, footer, .carga {
+.formulario .exito, .actividades_talleres .card .front, .clases .clase_practica, .clases .clase_teorica, footer, .cookies .mensaje .botones, .cookies .mensaje, .cookies, .carga {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -38,6 +38,63 @@ h3 {
   z-index: 200;
 }
 
+.cookies .mensaje {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: fixed;
+  bottom: -100%;
+  z-index: 120;
+  width: 30%;
+  overflow: hidden;
+  border-radius: 5px;
+  padding: 30px;
+  background-color: #ffffff4d;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  text-align: center;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+}
+.cookies .mensaje .botones button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 8px;
+  margin-right: 12px;
+}
+.cookies .mensaje.appear {
+  bottom: 70px;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 2s;
+          transition-duration: 2s;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes appear {
+  0% {
+    bottom: -100%;
+  }
+  100% {
+    bottom: 70px;
+  }
+}
+
+@keyframes appear {
+  0% {
+    bottom: -100%;
+  }
+  100% {
+    bottom: 70px;
+  }
+}
 nav {
   position: fixed;
   z-index: 100;
@@ -747,6 +804,12 @@ section .carrusel .carousel-inner {
       -ms-flex-align: center;
           align-items: center;
 }
+.formulario .exito {
+  width: 50%;
+  height: 200px;
+  padding: 100px;
+  background-color: #ffffff;
+}
 .formulario form {
   overflow: hidden;
   margin: 30px auto;
@@ -1085,8 +1148,8 @@ section .carrusel .carousel-inner {
 }
 @media (min-width: 1440px) and (max-width: 2249px) {
   .main-padding {
-    padding-left: 300px;
-    padding-right: 300px;
+    padding-left: 180px;
+    padding-right: 180px;
   }
 
   section .carrusel {

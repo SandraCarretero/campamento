@@ -1,5 +1,11 @@
+if ( window.history.replaceState) {
+    window.history.replaceState( null, null, window.location.href);
+}
+
+
 // carga
 // cuando estén vargadas imágenes. vídeos quitar pantalla de carga
+
 $(window).on("load", function(){
 
     setTimeout( function(){
@@ -23,6 +29,13 @@ $(function(){
         
         
     });
+
+    $(".mensaje").addClass("appear")
+    // cookies
+    $("button").click( function(){
+        console.log("clic")
+        $(".mensaje").removeClass("appear")
+    })
     
     // scroll clases y personas
     $(window).scroll(function(){
@@ -44,6 +57,8 @@ $(function(){
         $(".menu-mobile").toggleClass("open")
 
     });
+
+
 
 
     // barra de scroll
