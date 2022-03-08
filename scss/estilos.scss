@@ -571,12 +571,14 @@ section{
                 text-align: center;
             }
         }
-        &:hover .front{
-            transform: rotateY(180deg);
-            backface-visibility:hidden ;
-        }
-        &:hover .back{
-            transform: rotateY(0deg);
+        &.rotate{
+            .front{
+                transform: rotateY(180deg);
+                backface-visibility:hidden ;
+            }
+            .back{
+                transform: rotateY(0deg);
+            }
         }
     }
 }
@@ -677,7 +679,6 @@ section{
     display: flex;
     align-items: center;
     .exito{
-        // display: none;
         width: 50%;
         height: 200px;
         padding: 100px;
@@ -913,6 +914,10 @@ section{
         flex-direction: column;
         margin-bottom: 30px;
         margin-top: 30px;
+        .exito{
+            width: 95%;
+            padding: 10px;
+        }
         form{
             width: 95%;
             margin: 0;
@@ -985,6 +990,10 @@ section{
         flex-direction: column;
         margin-bottom: 30px;
         margin-top: 30px;
+        .exito{
+            width: 95%;
+            padding: 20px;
+        }
         form{
             width: 95%;
             margin: 0;
@@ -1026,6 +1035,13 @@ section{
                 p{
                     font-size: 1.5vw;
                 }
+            }
+            &:hover .front{
+                transform: rotateY(180deg);
+                backface-visibility:hidden ;
+            }
+            &:hover .back{
+                transform: rotateY(0deg);
             }
         }
     }
@@ -1088,6 +1104,13 @@ section{
                     font-size: 1vw;
                 }
             }
+            &:hover .front{
+                transform: rotateY(180deg);
+                backface-visibility:hidden ;
+            }
+            &:hover .back{
+                transform: rotateY(0deg);
+            }
         }
     }
 
@@ -1100,6 +1123,10 @@ section{
 
     
     .formulario{
+        .exito{
+            width: 95%;
+            padding: 20px;
+        }
         form{
             margin: 100px auto;
         }
@@ -1113,7 +1140,7 @@ section{
 
 
 // pantalla grande
-@media ( min-width: 2250px) and ( max-width: 3000px ){
+@media ( min-width: 2250px){
     p{
         font-size: 20px;
     }
@@ -1158,6 +1185,13 @@ section{
                 p{
                     font-size: 1vw;
                 }
+            }
+            &:hover .front{
+                transform: rotateY(180deg);
+                backface-visibility:hidden ;
+            }
+            &:hover .back{
+                transform: rotateY(0deg);
             }
         }
     }

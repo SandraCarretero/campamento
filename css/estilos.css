@@ -751,13 +751,13 @@ section .carrusel .carousel-inner {
 .actividades_talleres .card .back p {
   text-align: center;
 }
-.actividades_talleres .card:hover .front {
+.actividades_talleres .card.rotate .front {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
 }
-.actividades_talleres .card:hover .back {
+.actividades_talleres .card.rotate .back {
   -webkit-transform: rotateY(0deg);
           transform: rotateY(0deg);
 }
@@ -1137,6 +1137,10 @@ section .carrusel .carousel-inner {
     margin-bottom: 30px;
     margin-top: 30px;
   }
+  .formulario .exito {
+    width: 95%;
+    padding: 10px;
+  }
   .formulario form {
     width: 95%;
     margin: 0;
@@ -1202,6 +1206,10 @@ section .carrusel .carousel-inner {
     margin-bottom: 30px;
     margin-top: 30px;
   }
+  .formulario .exito {
+    width: 95%;
+    padding: 20px;
+  }
   .formulario form {
     width: 95%;
     margin: 0;
@@ -1231,6 +1239,16 @@ section .carrusel .carousel-inner {
 
   .actividades_talleres .card .back p {
     font-size: 1.5vw;
+  }
+  .actividades_talleres .card:hover .front {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+  }
+  .actividades_talleres .card:hover .back {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
   }
 
   .nosotros {
@@ -1278,6 +1296,16 @@ section .carrusel .carousel-inner {
   .actividades_talleres .card .back p {
     font-size: 1vw;
   }
+  .actividades_talleres .card:hover .front {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+  }
+  .actividades_talleres .card:hover .back {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
 
   .nosotros {
     padding-top: 40px;
@@ -1286,6 +1314,10 @@ section .carrusel .carousel-inner {
     margin-bottom: 40px;
   }
 
+  .formulario .exito {
+    width: 95%;
+    padding: 20px;
+  }
   .formulario form {
     margin: 100px auto;
   }
@@ -1293,7 +1325,7 @@ section .carrusel .carousel-inner {
     height: 530px;
   }
 }
-@media (min-width: 2250px) and (max-width: 3000px) {
+@media (min-width: 2250px) {
   p {
     font-size: 20px;
   }
@@ -1330,6 +1362,16 @@ section .carrusel .carousel-inner {
   }
   .actividades_talleres .card .back p {
     font-size: 1vw;
+  }
+  .actividades_talleres .card:hover .front {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+  }
+  .actividades_talleres .card:hover .back {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
   }
 
   .formulario form {

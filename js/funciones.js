@@ -35,7 +35,7 @@ $(function(){
     $("button").click( function(){
         console.log("clic")
         $(".mensaje").removeClass("appear")
-    })
+    });
     
     // scroll clases y personas
     $(window).scroll(function(){
@@ -44,8 +44,6 @@ $(function(){
         scrollAnimation( "#nosotros", "vertical" );
         scrollAnimation( "#nosotros2", "vertical" );
 
-
-        
     });
 
 
@@ -54,11 +52,12 @@ $(function(){
     $(".hamburguer").click( function(){
         console.log("clic")
         $(".hamburguer").toggleClass("cruz");
-        $(".menu-mobile").toggleClass("open")
+        $(".menu-mobile").toggleClass("open");
 
     });
 
 
+    
 
 
     // barra de scroll
@@ -93,6 +92,22 @@ $(function(){
     });
    
 
+    // click talleres
+    $(window).resize(function(){
+
+        if ($(window).width() <= 1023) {  
+ 
+            $(".card").click( function(){
+                console.log("clic");
+                $(".card").removeClass("rotate");
+                $(this).toggleClass("rotate");
+            });
+        };     
+    });
+ 
+ 
+
+
 });
 
 
@@ -126,3 +141,4 @@ function scrollAnimation( id, clase ) {
 }
 
 
+    
