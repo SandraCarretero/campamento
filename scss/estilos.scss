@@ -8,6 +8,7 @@ body{
     background-color: white;
     margin: 0;
     font-family: 'Quicksand', sans-serif;
+    overflow-x: hidden;
 }
 
 // extend
@@ -15,7 +16,6 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    // flex-wrap: wrap;
 }
 // @extend %flex-center-center;
 
@@ -800,7 +800,12 @@ section{
         }
     }
 
+    #header{
+        margin-bottom: 40px;
+    }
+
     footer{
+        margin-top: 40px;
         .redes{
             a{
                 width: 6%;
@@ -951,6 +956,14 @@ section{
         }
     }
 
+    #header{
+        margin-bottom: 60px;
+    }
+
+    footer{
+        margin-top: 80px;
+    }
+
     section{
         display: block;
         .carrusel{
@@ -1024,6 +1037,14 @@ section{
         }
     }
 
+    #header{
+        margin-bottom: 50px;
+    }
+
+    footer{
+        margin-top: 80px;
+    }
+
     section{
         .carrusel{
             min-width: 500px;
@@ -1038,7 +1059,7 @@ section{
             }
             &:hover .front{
                 transform: rotateY(180deg);
-                backface-visibility:hidden ;
+                backface-visibility:hidden;
             }
             &:hover .back{
                 transform: rotateY(0deg);
@@ -1078,6 +1099,14 @@ section{
                 bottom: 35px;
             }
         }
+    }
+
+    #header{
+        margin-bottom: 70px;
+    }
+
+    footer{
+        margin-top: 90px;
     }
 
     section{
@@ -1157,6 +1186,14 @@ section{
     .main-padding{
         padding-left: 300px;
         padding-right: 300px;
+    }
+
+    #header{
+        margin-bottom: 120px;
+    }
+
+    footer{
+        margin-top: 150px;
     }
     section{
         .carrusel{

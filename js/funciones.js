@@ -41,8 +41,9 @@ $(function(){
     $(window).scroll(function(){
         scrollAnimation( "#animacion", "aparece-izq" );
         scrollAnimation( "#animacion2", "aparece-dcha" );
-        scrollAnimation( "#nosotros", "vertical" );
-        scrollAnimation( "#nosotros2", "vertical" );
+
+        // scrollAnimation( "#nosotros", "vertical" );
+        // scrollAnimation( "#nosotros2", "vertical" );
 
     });
 
@@ -115,7 +116,8 @@ $(function(){
 
 
 function scrollAnimation( id, clase ) {
-    console.log($(id).length);
+    // console.log($(id).length);
+    // console.log(id, clase);
     if($(id).length==0){
         return
     }
@@ -125,6 +127,7 @@ function scrollAnimation( id, clase ) {
     // cantidad de pixeles de distancia del objeto animado con respecto del top del documento
     // .top para obtener solo esa propiedad
     var distancia_elemento = $(id).offset().top;
+
 
     // para sumar o restar la altura de las cajas
     var ventana = $(window).height();
@@ -136,8 +139,13 @@ function scrollAnimation( id, clase ) {
     }
     // para quitarlo al subir 
     else{
+    console.log(id, clase);
+        
+        console.log(scroll, ventana);
+        console.log(distancia_elemento);
         $(id).removeClass(clase);
     }
+    return;
 }
 
 
