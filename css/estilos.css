@@ -564,6 +564,7 @@ section .carrusel .carousel-inner {
 }
 .clases {
   margin-top: 0 auto;
+  overflow: hidden;
 }
 .clases .clase_teorica {
   position: relative;
