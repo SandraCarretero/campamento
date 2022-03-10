@@ -362,8 +362,14 @@ footer{
 // campamento
 #header{
     &.header_campamento{
-        // background-image: url("../img/pexels-pixabay-207896.jpg");
-        background-color: $secondary-color;
+        height: 100vh;
+        background-color: black;
+        video{
+            padding-top: 100px;
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+        }
     }    
 }
 
@@ -506,6 +512,7 @@ section{
 // cabecera
 #header{
     &.header_talleres{
+        // background-image: url(../img/pexels-photo-1709003.jpeg);
         background-color: black;
     }
 }
