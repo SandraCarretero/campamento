@@ -42,8 +42,8 @@ $(function(){
         scrollAnimation( "#animacion", "aparece-izq" );
         scrollAnimation( "#animacion2", "aparece-dcha" );
 
-        // scrollAnimation( "#nosotros", "vertical" );
-        // scrollAnimation( "#nosotros2", "vertical" );
+        scrollAnimation( "#nosotros", "vertical" );
+        scrollAnimation( "#nosotros2", "vertical" );
 
     });
 
@@ -87,7 +87,7 @@ $(function(){
     $("#header").mousemove(function(e){
         console.log(e.pageX, e.pageY)
         $("#header").css({
-            "background-position-x": 70 +e.pageX/90 +"%",
+            "background-position-x": 50 +e.pageX/90 +"%",
             "background-position-y": 70 +e.pageY/90 +"%",
         });
     });

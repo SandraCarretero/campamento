@@ -136,14 +136,13 @@ nav{
     width: 100%;
     background-color: transparent;
     display: flex;
+    flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
     padding-top: 20px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     .logo{
-        width: 60px;
-        aspect-ratio: 1/1;
-        background-color: white;
+        width: 10%;
         margin-left: 20px;
     }
     .menu{
@@ -333,7 +332,7 @@ footer{
     z-index: 200;
     width: 0;
     height: 10px;
-    background-color: $main-color;
+    background-color: $accent-color;
 }
 
 
@@ -345,9 +344,9 @@ footer{
     flex-direction: column;
     justify-content: flex-end;
     width: 100%;
-    height: 80vh;
+    height: 90vh;
     padding-bottom: 30px;
-    background-position: 70% 70%;
+    background-position: 50% 70%;
     background-size: 140%;
     background-repeat: no-repeat;
     h1{
@@ -393,7 +392,6 @@ section{
             margin-left: 8px;
         }
         .carousel-inner{
-            // background-color: $secondary-color;
             border-radius: 14px;
             aspect-ratio: 3/2;
         }
@@ -446,7 +444,7 @@ section{
             margin-right: 30px;
             aspect-ratio: 3/2;
             border-radius: 14px;
-            background-color: $secondary-color;
+            background-color: $accent-color;
         }
         .description{
             width: 80%
@@ -469,7 +467,7 @@ section{
             margin-left: 30px;
             aspect-ratio: 3/2;
             border-radius: 14px;
-            background-color: $secondary-color;
+            background-color: $accent-color;
         }
         .description{
             width: 80%
@@ -511,8 +509,9 @@ section{
 // cabecera
 #header{
     &.header_talleres{
-        // background-image: url(../img/pexels-photo-1709003.jpeg);
-        background-color: black;
+        background-color: $main-color;
+        background-image: url(../img/pexels-cottonbro-6896179.jpg);
+        background-blend-mode: soft-light;
     }
 }
 
@@ -565,7 +564,7 @@ section{
             flex-direction: column;
             justify-content: space-around;
             align-items: center;
-            background-color: #f2a413;
+            background-color: $main-color;
             width: 100%;
             height: 100%;
             border-radius: 14px;
@@ -599,8 +598,11 @@ section{
 // cabecera
 #header{
     &.header_nosotros{
+        background-size: 160%;
         height: 100vh;
-        background-color: #afdaff;
+        background-color: $main-color;
+        background-image: url(../img/pexels-bayu-jefri-1387037.jpg);
+        background-blend-mode: soft-light;
     }
 }
 
@@ -649,7 +651,7 @@ section{
             margin: 0 auto;
             aspect-ratio: 1/1;
             border-radius: 14px;
-            background-color: $secondary-color;
+            background-color: $accent-color;
         }
         .nombre{
             padding-top: 20px;
@@ -678,6 +680,7 @@ section{
 // contacto
 #header{
     &.header_contacto{
+        height: 40vh;
         background-color: $main-color;
     }
 }
@@ -708,7 +711,7 @@ section{
         label{
             width: 100%;
             display: inline-block;
-            margin-bottom: 15px;
+            margin-bottom: 5px;
             color: #727272;
             font-size: 13px;
         }
@@ -731,7 +734,7 @@ section{
                 display: inherit;
                 width: 0%;
                 height: 2px;
-                background-image: linear-gradient(to bottom left, $accent-color, $main-color);
+                background-image: linear-gradient(to bottom left, $main-color, $accent-color);
                 transition: all;
                 transition-duration: 1s;
             }
@@ -747,7 +750,7 @@ section{
             border: 0;
             color: white;
             display: flex;
-            background-color: $secondary-color;
+            background-color: $main-color;
             justify-content: center;
             align-items: center;
             padding: 10px;
@@ -757,7 +760,7 @@ section{
             transition-property: all;
             transition-duration: 1s;
             &:hover{
-                background-color: $main-color;
+                background-color: $accent-color;
             }
             i{
                 margin: 0 10px;
@@ -768,7 +771,7 @@ section{
         width: 46%;
         padding: 20px;
         margin: 20px;
-        background-color: $secondary-color;
+        background-color: $main-color;
         iframe{
             height: 450px;
         }
@@ -796,6 +799,9 @@ section{
     }
 
     nav{
+        .logo{
+            width: 20%;
+        }
         .menu{
             display: none;
         }
@@ -805,10 +811,6 @@ section{
         .hamburguer{
             display: flex;
         }
-    }
-
-    #header{
-        margin-bottom: 40px;
     }
 
     footer{
@@ -828,7 +830,11 @@ section{
     }
 
     #header{
+        margin-bottom: 40px;
         height: 45vh;
+        &.header_nosotros{
+            height: 70vh;
+        }
     }
 
     
@@ -965,6 +971,9 @@ section{
 
     #header{
         margin-bottom: 60px;
+        &.header_nosotros{
+            height: 70vh;
+        }
     }
 
     footer{
