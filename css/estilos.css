@@ -481,7 +481,6 @@ footer .copy {
 }
 
 #header.header_campamento {
-  height: 100vh;
   background-color: black;
 }
 #header.header_campamento video {
@@ -1315,6 +1314,9 @@ section .carrusel .carousel-inner {
   #header {
     margin-bottom: 70px;
   }
+  #header.header_campamento {
+    height: 90vh;
+  }
 
   footer {
     margin-top: 90px;
@@ -1385,6 +1387,13 @@ section .carrusel .carousel-inner {
 
   #header {
     margin-bottom: 120px;
+  }
+  #header.header_campamento {
+    height: 90vh;
+  }
+  #header.header_campamento video {
+    margin: 0 auto;
+    max-width: 2600px;
   }
 
   footer {
