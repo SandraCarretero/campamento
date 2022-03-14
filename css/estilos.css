@@ -1168,6 +1168,7 @@ section .carrusel .carousel-inner {
   }
   .formulario .exito {
     width: 95%;
+    height: 100px;
     padding: 10px;
   }
   .formulario form {
@@ -1252,6 +1253,7 @@ section .carrusel .carousel-inner {
   .formulario .exito {
     width: 95%;
     padding: 20px;
+    height: 100px;
   }
   .formulario form {
     width: 95%;
