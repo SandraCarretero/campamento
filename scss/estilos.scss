@@ -832,8 +832,11 @@ section{
     #header{
         margin-bottom: 40px;
         height: 45vh;
+        &.header_talleres{
+            height: 45vh;
+        }
         &.header_nosotros{
-            height: 70vh;
+            height: 45vh;
         }
     }
 
@@ -971,8 +974,11 @@ section{
 
     #header{
         margin-bottom: 60px;
+        &.header_talleres{
+            height: 60vh;
+        }
         &.header_nosotros{
-            height: 70vh;
+            height: 65vh;
         }
     }
 
@@ -1055,6 +1061,12 @@ section{
 
     #header{
         margin-bottom: 50px;
+        &.header_talleres{
+            height: 70vh;
+        }
+        &.header_nosotros{
+            height: 70vh;
+        }
     }
 
     footer{
