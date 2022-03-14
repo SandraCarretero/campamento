@@ -433,7 +433,7 @@ section{
 .clases{
     margin-top: 0 auto;
     overflow: hidden;
-    .clase_teorica{
+    .clase_izq{
         position: relative;
         transform: translateX(-100vw);
         margin-bottom: 60px;
@@ -456,7 +456,7 @@ section{
             animation-timing-function: ease-in-out;
         }
     }
-    .clase_practica{
+    .clase_dcha{
         position: relative;
         transform: translateX(-100vw);
         @extend %flex-center-center;
@@ -846,6 +846,7 @@ section{
         display: block;
         .text{
             text-align: center;
+            font-size: 14px;
         }
     }
 
@@ -867,6 +868,9 @@ section{
             }
             .description{
                 text-align: center;
+                p{
+                    font-size: 14px;
+                }
                 h3{
                     margin-top: 15px;
                     margin-bottom: 15px;
@@ -881,6 +885,9 @@ section{
             }
             .description{
                 text-align: center;
+                p{
+                    font-size: 14px;
+                }
                 h3{
                     margin-top: 15px;
                     margin-bottom: 15px;
@@ -997,6 +1004,30 @@ section{
             text-align: center;
         }
     }
+
+    .clases{
+        .clase_izq{
+            .description{
+                h3{
+                    margin-bottom: 20px;
+                }
+                p{
+                    font-size: 14px;
+                }
+            }
+        }
+        .clase_dcha{
+            .description{
+                h3{
+                    margin-bottom: 20px;
+                }
+                p{
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
 
     .actividades_talleres{
         margin-top: 40px;
@@ -1246,7 +1277,22 @@ section{
             animation-duration: 100s;
         }
     }
-
+    .clases{
+        .clase_izq{
+            .description{
+                p{
+                    font-size: 1vw;
+                }
+            }
+        }
+        .clase_dcha{
+            .description{
+                p{
+                    font-size: 1vw;
+                }
+            }
+        }
+    }
 
     .actividades_talleres{
         .card{

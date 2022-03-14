@@ -10,7 +10,7 @@ body {
   overflow-x: hidden;
 }
 
-.formulario .exito, .actividades_talleres .card .front, .clases .clase_practica, .clases .clase_teorica, footer, .cookies .mensaje .botones, .cookies .mensaje, .cookies, .carga {
+.formulario .exito, .actividades_talleres .card .front, .clases .clase_dcha, .clases .clase_izq, footer, .cookies .mensaje .botones, .cookies .mensaje, .cookies, .carga {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -573,13 +573,13 @@ section .carrusel .carousel-inner {
   margin-top: 0 auto;
   overflow: hidden;
 }
-.clases .clase_teorica {
+.clases .clase_izq {
   position: relative;
   -webkit-transform: translateX(-100vw);
           transform: translateX(-100vw);
   margin-bottom: 60px;
 }
-.clases .clase_teorica .img {
+.clases .clase_izq .img {
   width: 80%;
   overflow: hidden;
   margin-right: 30px;
@@ -587,10 +587,10 @@ section .carrusel .carousel-inner {
   border-radius: 14px;
   background-color: #e94a4d;
 }
-.clases .clase_teorica .description {
+.clases .clase_izq .description {
   width: 80%;
 }
-.clases .clase_teorica.aparece-izq {
+.clases .clase_izq.aparece-izq {
   -webkit-animation: aparece-izq;
           animation: aparece-izq;
   -webkit-animation-duration: 1s;
@@ -600,13 +600,13 @@ section .carrusel .carousel-inner {
   -webkit-animation-timing-function: ease-in-out;
           animation-timing-function: ease-in-out;
 }
-.clases .clase_practica {
+.clases .clase_dcha {
   position: relative;
   -webkit-transform: translateX(-100vw);
           transform: translateX(-100vw);
   margin-bottom: 60px;
 }
-.clases .clase_practica .img {
+.clases .clase_dcha .img {
   width: 80%;
   overflow: hidden;
   margin-left: 30px;
@@ -614,10 +614,10 @@ section .carrusel .carousel-inner {
   border-radius: 14px;
   background-color: #e94a4d;
 }
-.clases .clase_practica .description {
+.clases .clase_dcha .description {
   width: 80%;
 }
-.clases .clase_practica.aparece-dcha {
+.clases .clase_dcha.aparece-dcha {
   -webkit-animation: aparece-dcha;
           animation: aparece-dcha;
   -webkit-animation-duration: 1s;
@@ -1065,6 +1065,7 @@ section .carrusel .carousel-inner {
   }
   section .text {
     text-align: center;
+    font-size: 14px;
   }
 
   .contenedor-line .line {
@@ -1074,37 +1075,43 @@ section .carrusel .carousel-inner {
     padding-bottom: 10px;
   }
 
-  .clases .clase_teorica {
+  .clases .clase_izq {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .clases .clase_teorica .img {
+  .clases .clase_izq .img {
     margin: 0;
   }
-  .clases .clase_teorica .description {
+  .clases .clase_izq .description {
     text-align: center;
   }
-  .clases .clase_teorica .description h3 {
+  .clases .clase_izq .description h3 {
     margin-top: 15px;
     margin-bottom: 15px;
   }
-  .clases .clase_practica {
+  .clases .clase_dcha {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
   }
-  .clases .clase_practica .img {
+  .clases .clase_dcha .img {
     margin: 0;
   }
-  .clases .clase_practica .description {
+  .clases .clase_dcha .description {
     text-align: center;
   }
-  .clases .clase_practica .description h3 {
+  .clases .clase_dcha .description h3 {
     margin-top: 15px;
     margin-bottom: 15px;
+  }
+  .clases .clase_izq .description p{
+    font-size: 14px;
+  }
+  .clases .clase_dcha .description p{
+    font-size: 14px;
   }
 
   .actividades_talleres {
@@ -1216,6 +1223,18 @@ section .carrusel .carousel-inner {
   }
   section .text {
     text-align: center;
+  }
+  .clases .clase_izq .description p{
+    font-size: 14px;
+  }
+  .clases .clase_dcha .description p{
+    font-size: 14px;
+  }
+  .clases .clase_izq .description h3{
+    margin-bottom: 20px;
+  }
+  .clases .clase_dcha .description h3{
+    margin-bottom: 20px;
   }
 
   .actividades_talleres {
@@ -1435,7 +1454,13 @@ section .carrusel .carousel-inner {
     -webkit-animation-duration: 100s;
             animation-duration: 100s;
   }
-
+  .clases .clase_izq .description p{
+    font-size: 1vw;
+  }
+  .clases .clase_dcha .description p{
+    font-size: 1vw;
+  }
+  
   .actividades_talleres .card .front h1 {
     font-size: 3vw;
   }

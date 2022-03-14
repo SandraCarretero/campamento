@@ -41,6 +41,10 @@ $(function(){
     $(window).scroll(function(){
         scrollAnimation( "#animacion", "aparece-izq" );
         scrollAnimation( "#animacion2", "aparece-dcha" );
+        scrollAnimation( "#animacion3", "aparece-izq" );
+        scrollAnimation( "#animacion4", "aparece-dcha" );
+        scrollAnimation( "#animacion5", "aparece-izq" );
+
 
         scrollAnimation( "#nosotros", "vertical" );
         scrollAnimation( "#nosotros2", "vertical" );
