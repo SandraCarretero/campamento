@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>Talleres</title>
+    <title>Contacto</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,6 +18,12 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
+    <!-- Librería de emailjs -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <!-- Conexión a archivo local de configuración de envío -->
+    <script src="js/sendemailjs.js"></script>
+
 
 </head>
 <body>
@@ -27,6 +33,7 @@
             
         </div>
     </div>
+
     
     <nav class="nav main-padding">
       <div class="logo">
@@ -55,76 +62,61 @@
     </div>
     </nav>
 
-    <header id="header" class="header_talleres main-padding">
-        <div class="grid"></div>
-        <h1>Talleres</h1>
+    <header id="header" class="header_contacto main-padding">
+        <h1>Contacto</h1>
     </header>
 
-    <div class="actividades_talleres main-padding">
-        <div class="card">
-            <div class="front">
-                <img src="img/annie-spratt-4Hpljf9Y1ko-unsplash.jpg" alt="" width="100%">
-                <div class="oscuro"></div>
-                <h1>Música</h1>
-            </div>
-            <div class="back">
-                <h1>Música</h1>
-                <p>En este taller aprenderemos a diferenciar los diferentes compases y a movernos con la música, ya que la relación entre movimiento y tiempo es la que va a determinar la expresividad y la fuerza simbólica de la danza, además, aprenderemos a tocar algún instrumento.
-                </p>
+    
+
+    <div class="formulario main-padding">
+
+        <div id="exito" class="exito">
+            <div class="mensaje">
+                <h4>¡Gracias por contactar con nosotros!</h4> 
+                <p>Tu correo ha sido enviado con éxito. Te contestaremos lo antes posible.</p>
             </div>
         </div>
-        <div class="card">
-            <div class="front">
-                <img src="img/sonder-quest-pRh9RiynHGE-unsplash.jpg" alt="" width="100%">
-                <div class="oscuro"></div>
-                <h1>Escenografía</h1>
+
+
+        <form id="contact-form" action="" method="POST">
+            <div class="nombre">
+                <label for="name">Tu nombre</label>
+                <input type="text" name="name" id="name" placeholder="Escribe tu nombre" autocomplete="off">
+                <div class="recta"></div>
             </div>
-            <div class="back">
-                <h1>Escenografía</h1>
-                <p>Veremos todos los elementos visuales que conforman una escenificación, sean corpóreos (decorado, accesorios), la iluminación o la caracterización de los personajes (vestuario, maquillaje, peluquería).</p>
+
+            <div class="apellido">
+                <label for="apellido">Tus apellidos</label>
+                <input type="text" name="apellido" id="name" placeholder="Escribe tus apellidos" autocomplete="off">
+                <div class="recta"></div>
             </div>
-        </div>
-        <div class="card">
-            <div class="front">
-                <img src="img/mojor-zhu-Qfdb1GbasNk-unsplash.jpg" alt="" width="100%">
-                <div class="oscuro"></div>
-                <h1>Costura</h1>
+
+            <div class="correo">
+                <label for="email">Tu email</label>
+                <input type="email" name="email" id="email" placeholder="Escribe tu email" autocomplete="off">
+                <div class="recta"></div>
             </div>
-            <div class="back">
-                <h1>Costura</h1>
-                <p>Realizaremos diferentes prendas sencillas y nos centraremos en arreglos rápidos o piezas muy habituales que necesitamos día a día.</p>
+
+            <div class="consulta">
+                <label for="consulta">Consulta</label>
+                <textarea placeholder="Escribe tu mensaje" name="mensaje" id="consulta" cols="30" rows="8" type="mensaje"></textarea>
+                <div class="recta"></div>
             </div>
-        </div>
-        <div class="card">
-            <div class="front">
-                <img src="img/brooke-lark-RrzeCGujVfU-unsplash.jpg" alt="" width="100%">
-                <div class="oscuro"></div>
-                <h1>Alimentación</h1>
-            </div>
-            <div class="back">
-                <h1>Alimentación</h1>
-                <p>Un reto importante para muchos bailarines es ingerir cantidades suficientes de alimentos para satisfacer las demandas de energía de la danza.
-                Aprenderemos a calcular las calorías necesarias y planificaremos una dieta de alto rendimiento.
-                </p>
-            </div>
-        </div>
-        <div class="card">
-            <div class="front">
-                <img src="img/toa-heftiba-a9pFSC8dTlo-unsplash.jpg" alt="" width="100%">
-                <div class="oscuro"></div>
-                <h1>Fisioterapia</h1>
-            </div>
-            <div class="back">
-                <h1>Fisioterapia</h1>
-                <p>En este taller conoceremos dónde tenemos que acudir para tratar las lesiones y, sobre todo, como prevenirlas. Veremos las lesiones más comunes que sufren los bailarines, qué las provoca y cómo recuperarnos.</p>
+
+            <button type="submit" class="send">
+                Enviar <i class="fas fa-arrow-right"></i>
+            </button>
+            
+        </form>
+  
+
+
+        <div class="mapa">
+            <div class="google-maps">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12149.493594549376!2d-3.7130592500000006!3d40.42273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1645603797107!5m2!1ses!2ses" width="100%"  style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </div>
-
-    
-    
-
-
     
     <footer>
         <div class="redes">

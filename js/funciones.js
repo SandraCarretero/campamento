@@ -33,7 +33,7 @@ $(function(){
     $(".mensaje").addClass("appear")
     // cookies
     $("button").click( function(){
-        console.log("clic")
+        // console.log("clic")
         $(".mensaje").removeClass("appear")
     });
     
@@ -51,7 +51,7 @@ $(function(){
 
     // hamburguesa
     $(".hamburguer").click( function(){
-        console.log("clic")
+        // console.log("clic")
         $(".hamburguer").toggleClass("cruz");
         $(".menu-mobile").toggleClass("open");
 
@@ -85,7 +85,7 @@ $(function(){
 
     // mover fondo header
     $("#header").mousemove(function(e){
-        console.log(e.pageX, e.pageY)
+        // console.log(e.pageX, e.pageY)
         $("#header").css({
             "background-position-x": 50 +e.pageX/90 +"%",
             "background-position-y": 70 +e.pageY/90 +"%",
@@ -99,7 +99,7 @@ $(function(){
         if ($(window).width() <= 1023) {  
  
             $(".card").click( function(){
-                console.log("clic");
+                // console.log("clic");
                 $(".card").removeClass("rotate");
                 $(this).toggleClass("rotate");
             });
@@ -139,10 +139,10 @@ function scrollAnimation( id, clase ) {
     }
     // para quitarlo al subir 
     else{
-    console.log(id, clase);
+    // console.log(id, clase);
         
-        console.log(scroll, ventana);
-        console.log(distancia_elemento);
+        // console.log(scroll, ventana);
+        // console.log(distancia_elemento);
         $(id).removeClass(clase);
     }
     return;
