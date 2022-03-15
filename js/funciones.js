@@ -100,16 +100,23 @@ $(function(){
     // click talleres
     $(window).resize(function(){
 
-        if ($(window).width() <= 1023) {  
- 
-            $(".card").click( function(){
-                // console.log("clic");
-                $(".card").removeClass("rotate");
-                $(this).toggleClass("rotate");
-            });
-        };     
     });
- 
+    
+    if ($(window).width() <= 1023) {  
+
+
+
+        $(".card").click( function(){
+            // console.log("clic");
+            if ($(this).hasClass("rotate")){
+                $(this).removeClass("rotate")
+            }
+            else{
+                $(".card").removeClass("rotate");
+                $(this).addClass("rotate");
+            }
+        });
+    };     
  
 
 
