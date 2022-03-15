@@ -477,7 +477,6 @@ section{
             animation-duration: 1s;
             animation-fill-mode: both;
             animation-timing-function: ease-in-out;
-            animation-delay: 0.5s;
         }
     }
 }
@@ -645,6 +644,7 @@ section{
         display: flex;
         flex-direction: column;
         align-items: center;
+        opacity: 0;
         .foto{
             width: 80%;
             overflow: hidden;
