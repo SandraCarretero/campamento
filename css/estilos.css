@@ -30,6 +30,21 @@ body {
 h3 {
   margin-bottom: 40px;
 }
+h1::selection{
+  background-color: #e94a4dcc;
+}
+h2::selection{
+  background-color: #e94a4dcc;
+}
+h3::selection{
+  background-color: #e94a4dcc;
+}
+p::selection{
+  background-color: #e94a4dcc;
+}
+span::selection{
+  background-color: #e94a4dcc;
+}
 
 .carga {
   position: fixed;

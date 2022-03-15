@@ -28,6 +28,10 @@ h3{
     margin-bottom: 40px;
 }
 
+p::selection{
+    background-color: #e94a4dcc;
+}
+
 // carga
 .carga{
     position: fixed;
